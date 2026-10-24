@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="墨岩的图片摄影与电影摄影作品">
+  <meta name="color-scheme" content="dark">
+  <title>墨岩 — Photography &amp; Cinematography</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Outfit-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+  <script src="experience.js" defer></script>
+  <script src="navigation.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">跳至内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="墨岩 首页">墨岩</a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#selected" data-i18n="navSelected">精选作品</a>
+        <button class="works-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="navigation-panel">
+          <span data-i18n="navAll">全部作品</span><span class="chevron" aria-hidden="true"></span>
+        </button>
+        <a href="#about" data-i18n="navAbout">关于</a>
+      </nav>
+      <div class="header-tools">
+        <div class="language" role="group" aria-label="Language / 语言">
+          <button type="button" data-language="zh" aria-pressed="true">中</button><span aria-hidden="true">/</span>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="mobile-menu-toggle" type="button" data-menu-toggle aria-label="菜单 / Menu" aria-expanded="false" aria-controls="navigation-panel"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <button class="menu-scrim" type="button" data-menu-close aria-label="关闭菜单 / Close menu" hidden></button>
+  <nav id="navigation-panel" class="navigation-panel" aria-label="作品导航 / Project navigation" hidden>
+    <div class="panel-inner">
+      <div class="panel-group">
+        <a class="panel-heading mobile-only" href="#selected" data-i18n="navSelected">精选作品</a>
+        <a class="panel-heading" href="#all/photography" data-i18n="art">艺术摄影创作</a>
+        <a href="#all/documentary" data-i18n="documentary">纪实</a>
+        <a href="#all/portrait" data-i18n="portrait">人像</a>
+        <a href="#all/contemporary" data-i18n="contemporary">当代创作</a>
+      </div>
+      <div class="panel-group">
+        <a class="panel-heading" href="#all/film" data-i18n="film">短片创作</a>
+        <p data-i18n="filmMenuNote">按项目浏览影片与参与职责。</p>
+      </div>
+      <div class="panel-group">
+        <a class="panel-heading" href="#all" data-i18n="allProjects">全部作品</a>
+        <a href="#about" data-i18n="navAbout">关于</a>
+        <p class="panel-signature">PHOTOGRAPHY<br>&amp; CINEMATOGRAPHY</p>
+      </div>
+    </div>
+  </nav>
+  <main id="main" tabindex="-1">
+    <p id="load-error" class="load-error" hidden role="alert"></p>
+    <div id="home-view">
+      <section class="hero image-panel" aria-labelledby="name">
+        <div class="panel-media hero-media"><img src="/assets/selected-photos/01-1800.webp" width="2536" height="1712" alt="墨岩的测试照片" data-site-image="hero" fetchpriority="high"></div>
+        <div class="panel-shade" aria-hidden="true"></div>
+        <div class="hero-copy panel-copy">
+          <h1 id="name">墨岩</h1><p class="hero-identity">PHOTOGRAPHY &amp; CINEMATOGRAPHY</p>
+          <p class="hero-role" data-i18n="independent">摄影 · 电影摄影</p>
+          <div class="cta-row"><a class="cta" href="#selected" data-i18n="enterSelected">探索精选作品</a></div>
+        </div>
+        
+        <a class="scroll-invitation" href="#selected" aria-label="向下浏览 / Scroll to explore"><span aria-hidden="true"></span></a>
+      </section>
+      <section id="selected" class="selected-section image-panel" aria-labelledby="selected-heading" tabindex="-1">
+        <div class="selected-preview panel-media" data-current="photography">
+          <img class="is-active" data-site-image="selectedPreview" data-preview-image="photography" src="assets/selected-photos/01-1800.webp" srcset="assets/selected-photos/01-900.webp 900w, assets/selected-photos/01-1800.webp 1800w" sizes="100vw" width="1800" height="1800" alt="透过粉色窗帘的光线与室内台灯" data-alt="selectedCurtainAlt" loading="lazy">
+          <img data-preview-image="film" src="/assets/selected-photos/02-1800.webp" width="1920" height="816" alt="短片入口的测试照片" data-alt="testImageAlt" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="panel-shade" aria-hidden="true"></div>
+        <div class="panel-copy selected-copy">
+          <p class="eyebrow">SELECTED WORKS</p><h2 id="selected-heading" data-i18n="selectedTitle">精选作品集</h2>
+          <p class="panel-description" data-i18n="selectedDescription">静止的画面，流动的影像。</p>
+          <nav class="jump-links cta-row" aria-label="作品快捷入口">
+            <a class="cta" href="#photography" data-preview="photography" data-active="true" data-i18n="photography">图片摄影</a>
+            <a class="cta" href="#cinematography" data-preview="film" data-active="false" data-i18n="shortFilms">短片</a>
+          </nav>
+        </div>
+      </section>
+      <section id="photography" class="photo-selection section-shell" aria-labelledby="photo-heading" tabindex="-1">
+        <div class="selection-heading">
+          <p class="eyebrow">PHOTOGRAPHY</p><h2 id="photo-heading" data-i18n="photography">图片摄影</h2>
+        </div>
+        <div class="selected-photo-grid" id="home-photos"></div>
+        <div class="archive-grid featured-projects" id="featured-photography"></div>
+      </section>
+      <section id="cinematography" class="work-section film-section image-panel" aria-labelledby="film-heading" tabindex="-1">
+        <div class="panel-media"><img src="/assets/selected-photos/02-1800.webp" width="1920" height="816" alt="短片入口的测试照片" data-alt="testImageAlt" loading="lazy"></div>
+        <div class="panel-shade" aria-hidden="true"></div>
+        <div class="panel-copy">
+          <p class="eyebrow">SHORT FILMS / CINEMATOGRAPHY</p><h2 id="film-heading" data-i18n="shortFilms">短片</h2>
+          <div class="cta-row"><a class="cta" href="#all/film" data-i18n="exploreFilm">浏览短片创作</a></div>
+        </div>
+        
+      </section>
+      <div class="archive-grid featured-projects section-shell" id="featured-films"></div>
+      <section class="archive-callout section-shell">
+        <p class="eyebrow">THE COMPLETE COLLECTION</p><h2 data-i18n="allProjects">全部作品</h2>
+        <p data-i18n="archiveNote">纪实、人像、当代创作与短片。<br>从一个项目，进入另一种观看。</p>
+        <a class="cta" href="#all" data-i18n="viewAllProjects">浏览全部项目</a>
+      </section>
+    </div>
+    <section id="archive-view" class="archive-view section-shell" aria-labelledby="archive-heading" hidden>
+      <a href="#home" class="text-link back-link"><span aria-hidden="true">←</span><span data-i18n="backHome">返回首页</span></a>
+      <p class="eyebrow">ALL PROJECTS</p><h1 id="archive-heading" data-i18n="allProjects">全部作品</h1>
+      <p class="archive-description" data-i18n="archiveDescription">按类别浏览，进入每个项目的作品与创作思考。</p>
+      <div class="filters" role="group" aria-label="作品分类" id="filters"></div><div class="archive-grid" id="archive-grid"></div>
+      <p class="archive-empty" id="archive-empty" hidden data-i18n="categoryEmpty">这个分类尚未加入项目。后续将呈现你的正式作品。</p>
+    </section>
+    <footer id="about" class="site-footer section-shell" tabindex="-1">
+      <div class="footer-grid">
+        <div class="footer-about"><h2 data-i18n="footerTitle">关于墨岩</h2><p id="about-text">以图片摄影与电影摄影展开创作。<br>这里将补充个人简介与合作联系方式。</p></div>
+        <div><h3 data-i18n="art">艺术摄影创作</h3><a href="#all/documentary" data-i18n="documentary">纪实</a><a href="#all/portrait" data-i18n="portrait">人像</a><a href="#all/contemporary" data-i18n="contemporary">当代创作</a></div>
+        <div><h3 data-i18n="film">短片创作</h3><a href="#all/film" data-i18n="viewAllProjects">浏览全部项目</a><a href="#selected" data-i18n="navSelected">精选作品</a></div>
+        <div><h3 data-i18n="contactLabel">联系与合作</h3><div id="contact-content"></div><a href="#home" data-i18n="backTop">回到顶部</a></div>
+      </div>
+      <div class="footer-bottom"><span>墨岩 © 2026</span><span data-i18n="previewNote">本地风格预览 · 图像与文字含示意内容</span></div>
+    </footer>
+  </main>
+  <dialog id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-toolbar"><span data-i18n="dialogPreview">项目预览</span><span id="dialog-index" hidden></span>
+      <div class="dialog-actions"><div class="language" role="group" aria-label="Language / 语言"><button type="button" data-language="zh" aria-pressed="true">中</button><span aria-hidden="true">/</span><button type="button" data-language="en" aria-pressed="false">EN</button></div><button type="button" id="dialog-close" aria-label="关闭 / Close"><span data-i18n="close">关闭</span><span aria-hidden="true">×</span></button></div>
+    </div><div id="dialog-content"></div>
+  </dialog>
+</body>
+</html>

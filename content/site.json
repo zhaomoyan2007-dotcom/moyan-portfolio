@@ -1,0 +1,28 @@
+{
+  "homePhotos": [
+    "/assets/selected-photos/01-1800.webp",
+    "/assets/selected-photos/02-1800.webp",
+    "/assets/selected-photos/03-1800.webp",
+    "/assets/selected-photos/04-1800.webp",
+    "/assets/selected-photos/05-1800.webp",
+    "/assets/selected-photos/06-1800.webp"
+  ],
+  "name": "墨岩",
+  "selectedPreview": "/assets/selected-photos/01-1800.webp",
+  "about": {
+    "zh": "以图片摄影与电影摄影展开创作。\n这里将补充个人简介与合作联系方式。",
+    "en": "Working across photography and cinematography.\nA biography and contact details will be added here."
+  },
+  "contactURL": "",
+  "contactLabel": {
+    "zh": "联系与合作",
+    "en": "CONTACT"
+  },
+  "schemaVersion": 1,
+  "hero": "/assets/selected-photos/01-1800.webp",
+  "contactEmail": "",
+  "identity": {
+    "zh": "摄影 · 电影摄影",
+    "en": "PHOTOGRAPHY · CINEMATOGRAPHY"
+  }
+}
