@@ -1,4 +1,5 @@
 import { authConfig, verifyState, readStateCookie, stateCookie, callbackPage } from '../lib/oauth.mjs';
+import { uploadCookie } from '../lib/cloud-upload.mjs';
 export default async function handler(req,res) {
   res.setHeader('Cache-Control','no-store');
   res.setHeader('Referrer-Policy','no-referrer');
@@ -21,6 +22,7 @@ export default async function handler(req,res) {
     if(typeof token.access_token!=='string')throw new Error('未取得授权');
     const identity=await fetch('https://api.github.com/user',{headers:{Authorization:`Bearer ${token.access_token}`,Accept:'application/vnd.github+json'},signal:AbortSignal.timeout(15000)});
     if(!identity.ok || (await identity.json()).login?.toLowerCase()!==config.owner)throw new Error('请使用网站所有者的GitHub账号');
+    res.setHeader('Set-Cookie',[stateCookie('',true),uploadCookie(config.owner,config.secret)]);
     res.setHeader('Content-Type','text/html; charset=utf-8');
     res.status(200).send(callbackPage(config.origin,{token:token.access_token,provider:'github'}));
   }catch{

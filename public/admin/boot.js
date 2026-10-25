@@ -18,6 +18,10 @@ async function start(){
       await new Promise((resolve,reject)=>{media.onload=resolve;media.onerror=reject;document.head.append(media);});
       window.CMS.registerMediaLibrary(window.MoyanLocalMedia);
     }
+    if(runtime.mode==='github'){
+      const {cloudMedia}=await import('./cloud-media.mjs');
+      window.CMS.registerMediaLibrary(cloudMedia);
+    }
     const note=document.getElementById('mode-note');note.hidden=false;
     document.getElementById('mode-label').textContent=runtime.mode==='local'?'本地作品管理':'作品保存与上线';
     document.getElementById('mode-detail').textContent=runtime.mode==='local'?'本地模式只修改本机内容文件，不会上传到公网。保存后刷新网站查看结果。本地代理不支持线上草稿审核流程，保存修改会直接反映到本机页面。':'先保存草稿并预览，确认后再发布到主分支；选择“公开展示”的项目才进入作品目录。等待Vercel构建成功后网页才会更新。图片库可能要求另行登录Cloudinary。';

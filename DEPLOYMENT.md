@@ -24,7 +24,7 @@ Client ID和Client Secret写入Vercel环境变量，Secret不能写进仓库或�
 
 ## 4. Cloudinary
 
-使用作者自己的账户，取得Cloud name与API key，填到对应Vercel变量。API key用于媒体库连接，可以出现在客户端配置；不要把API secret填到任何公开配置。本方案不需要向前台提供API secret，图片库使用账户登录授权。
+使用作者自己的账户，取得Cloud name与API key，填到对应Vercel变量。API key用于媒体库连接，可以出现在客户端配置；不要把API secret填到任何公开配置。已有图片库继续使用账户登录授权。新增自动压缩上传需要将API secret仅填入Vercel的CLOUDINARY_API_SECRET（Production、Sensitive）。它只由服务端签名接口读取，不进入config.json或网页，也不要发到聊天。
 
 免费额度由存储、处理与传输共同消耗；需要用实际图片与访问规模验证。原片继续保留原有备份。
 
@@ -42,6 +42,7 @@ Client ID和Client Secret写入Vercel环境变量，Secret不能写进仓库或�
 | GITHUB_OAUTH_SCOPE | 当前公开仓库使用`public_repo` |
 | CLOUDINARY_CLOUD_NAME | 图片账户的Cloud name |
 | CLOUDINARY_API_KEY | 图片账户的公开API key |
+| CLOUDINARY_API_SECRET | 自动压缩上传签名，仅服务器使用 |
 
 变量填好后重新部署，`/admin/`才进入线上登录。`.env.example`只列变量名；不得提交填入真实值的`.env`文件。平台环境变量的真实值不打印到检查记录。
 
@@ -62,6 +63,14 @@ Client ID和Client Secret写入Vercel环境变量，Secret不能写进仓库或�
 
 若将SITE_URL切换到独立域名，OAuth App的Homepage和callback也要同步更新，并重新部署。后续采用大陆托管或大陆加速时，再按实际资源办理备案；仅购买域名不代表完成备案。
 
-## 尚未执行的外部操作
+## 自动压缩上传（2026-10-25）
+
+- 后台继续从原vercel.app地址进入。保存新变量并部署后，先退出CMS再用GitHub登录，以取得1小时有效的HttpOnly上传会话。过期会明确提示重新登录。CMS退出不会立即撤销该上传会话，共享设备应清除本站数据。
+- “选择照片并自动压缩”在本地处理副本并直接上传；“从Cloudinary图片库选择”保留已有图片选择。Cloudinary库内原生Upload不经过自动压缩，请用新入口上传大图。
+- 静态JPEG、PNG、WebP转WebP，最长边3000、不放大、保留透明、目标4MB以内，必要时降低质量和尺寸。有损转换移除EXIF/定位信息，浏览器使用sRGB画布。高要求作品请比对色彩，网页副本不能代替原片备份。
+- 不支持RAW、HEIC和动画，拒绝超过100MB或6000万像素的照片。批量顺序处理，显示逐张进度、失败和重试；成功项可以插入。关闭窗口会取消剩余任务，但已成功上传的图片仍保留在Cloudinary。
+- 当前网站已完成真实登录、Cloudinary上传、工作流发布，新域名moyan.ddnsfree.com已通过用户不挂代理的访问测试。本次新增签名上传需配置新Secret后再做真实上传验收。
+
+## 初始接入记录（历史状态）
 
 真实Vercel账户导入、Cloudinary账户绑定、自建OAuth App、域名购买与解析、跨地区验收。不把本机测试替代这些步骤。
