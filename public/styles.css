@@ -178,9 +178,22 @@ html[lang=en] .panel-description { letter-spacing:.04em; }
 .brand-han{font-family:SignatureHan,"PingFang SC",sans-serif;font-size:21px;font-weight:400;letter-spacing:.22em}
 .hero.image-panel{height:auto;min-height:0;max-height:none;background:#000;padding:0 0 100px}
 .hero .hero-media{position:relative;inset:auto;z-index:0;height:auto;background:#000;display:grid;place-items:center}
-.hero .hero-media img{position:static;display:block;width:auto;height:auto;max-width:100%;max-height:85svh;object-fit:contain;transform:none;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(180deg,transparent,#000 8%,#000 72%,transparent);mask-composite:intersect;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(180deg,transparent,#000 8%,#000 72%,transparent);-webkit-mask-composite:source-in}
+/* A broad, eased falloff avoids the sharp rectangular border of a short linear fade. */
+.hero .hero-media img,.selected-section .selected-preview img{
+ position:static;display:block;width:100%;height:auto;max-width:1440px;max-height:none;object-fit:contain;transform:none;opacity:.88;
+ --edge-fade:linear-gradient(90deg,transparent 0%,#0001 5%,#0004 12%,#0009 22%,#000e 34%,#000 44%,#000 56%,#000e 66%,#0009 78%,#0004 88%,#0001 95%,transparent 100%);
+ --vertical-fade:linear-gradient(180deg,transparent 0%,#0001 4%,#0005 10%,#000b 18%,#000f 28%,#000 36%,#000 56%,#000e 66%,#0009 78%,#0004 88%,#0001 95%,transparent 100%);
+ mask-image:var(--edge-fade),var(--vertical-fade);mask-composite:intersect;
+ -webkit-mask-image:var(--edge-fade),var(--vertical-fade);-webkit-mask-composite:source-in;
+}
+.selected-section.image-panel{display:grid;height:auto;min-height:0;max-height:none;margin-top:0;background:#000;overflow:hidden}
+.selected-section .selected-preview{position:relative;inset:auto;grid-area:1/1;z-index:0;height:auto;display:grid;place-items:center;background:#000}
+.selected-section .panel-shade{display:none}
+.selected-section .selected-copy{position:relative;inset:auto;grid-area:1/1;align-self:start;z-index:1;width:100%;padding:50px var(--pad);margin:clamp(100px,24vw,350px) auto 0}
+.selected-section.is-empty .selected-copy{grid-area:auto}
+.selected-copy .cta{background:#0007}.selected-copy .cta:hover,.selected-copy .cta:focus-visible{background:white}
 .hero .panel-shade{display:none}
-.hero .hero-copy{position:relative;inset:auto;z-index:1;max-width:1000px;margin:-120px auto 0;padding:0 var(--pad);text-align:center;animation:content-in 1s .15s both}
+.hero .hero-copy{position:relative;inset:auto;z-index:1;max-width:1000px;margin:clamp(-500px,-38vw,-280px) auto 0;padding:0 var(--pad);text-align:center;animation:content-in 1s .15s both}
 .hero-copy #name{display:flex;flex-direction:column;align-items:center;gap:22px;padding:0;line-height:1.2}
 .signature-han{font-family:SignatureHan,"PingFang SC",sans-serif;font-weight:400;font-size:clamp(68px,7vw,100px);letter-spacing:.28em;padding-left:.28em;order:1}
 .signature-latin{font-family:SignatureLatin,Outfit,sans-serif;font-weight:400;font-size:27px;letter-spacing:.34em;padding-left:.34em;order:2}
@@ -197,7 +210,7 @@ html[lang=en] .hero-introduction{font-size:18px;line-height:1.95;letter-spacing:
 @media(max-width:760px){
  .brand{gap:12px}.brand-latin{font-size:15px;letter-spacing:.16em}.brand-han{font-size:18px}
  .hero.image-panel{min-height:0;padding:0 0 95px}
- .hero .hero-media img{max-height:75svh}.hero .hero-copy{margin-top:-25px;padding:0 26px}
+ .hero .hero-copy{margin-top:-25px;padding:0 26px}.selected-section .selected-copy{align-self:center;margin:0 auto;padding:35px 25px}
  .hero-copy #name{gap:19px}.signature-han{font-size:64px}.signature-latin{font-size:22px}
  .hero .hero-identity{font-size:10px;letter-spacing:.13em;line-height:1.9;margin-top:24px}
  .hero .hero-role{font-size:11px}.hero-introduction{margin-top:38px;font-size:14px;line-height:2.1;letter-spacing:.02em;max-width:480px}
