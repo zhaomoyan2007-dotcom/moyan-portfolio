@@ -51,9 +51,9 @@ function renderHome(){
   const introText=localized(site.intro)||localized(site.about).split('\n')[0];
   introduction.replaceChildren(...introText.split(/\n\s*\n/).filter(Boolean).map(text=>node('p','',text)));
   document.querySelector('.hero-role').textContent=localized(site.identity);
-  document.querySelectorAll('[data-site-image]').forEach(img=>{img.src=imageURL(site[img.dataset.siteImage],1800);img.removeAttribute('srcset');img.alt=language==='zh'?'墨岩的摄影作品':'Photography by 墨岩';});
+  document.querySelectorAll('[data-site-image]').forEach(img=>{if(img.dataset.siteImage==='hero'){img.removeAttribute('width');img.removeAttribute('height');}img.src=imageURL(site[img.dataset.siteImage],1800);img.removeAttribute('srcset');img.alt=language==='zh'?'墨岩的摄影作品':'Photography by 墨岩';});
   renderPhotoSections(site,projects);
-  document.getElementById('selected').classList.toggle('is-empty',!site.homePhotos.length&&!projects.some(p=>p.featured&&p.category!=='film'));
+  document.getElementById('selected').classList.toggle('is-empty',!site.selectedPreview);
   document.getElementById('cinematography').classList.toggle('is-empty',!projects.some(p=>p.featured&&p.category==='film'));
   byId('featured-films').replaceChildren(...projects.filter(p=>p.featured&&p.category==='film').map(card));
   byId('featured-films').hidden=!byId('featured-films').childElementCount;

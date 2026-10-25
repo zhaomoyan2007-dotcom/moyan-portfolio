@@ -1,39 +1,14 @@
 (() => {
   'use strict';
 
-  const hero = document.querySelector('.hero');
-  const homeView = document.getElementById('home-view');
-  const header = document.querySelector('.site-header');
   const preview = document.querySelector('.selected-preview');
   const choices = [...document.querySelectorAll('[data-preview]')];
-  const images = [...document.querySelectorAll('[data-preview-image]')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let scheduledFrame = 0;
-
-  function updateIntro() {
-    scheduledFrame = 0;
-    if (!hero || homeView.hidden) return;
-    if (reducedMotion.matches) {
-      hero.style.setProperty('--image-shift', '0px');
-      return;
-    }
-    const travelled = Math.max(0, header.offsetHeight - hero.getBoundingClientRect().top);
-    hero.style.setProperty('--image-shift', Math.min(70, travelled * .1).toFixed(1) + 'px');
-  }
-
-  function scheduleIntro() {
-    if (!scheduledFrame) scheduledFrame = requestAnimationFrame(updateIntro);
-  }
 
   function showPreview(kind) {
-    if (!preview || !images.some(image => image.dataset.previewImage === kind)) return;
+    if (!preview) return;
     preview.dataset.current = kind;
     choices.forEach(choice => { choice.dataset.active = String(choice.dataset.preview === kind); });
-    images.forEach(image => {
-      const active = image.dataset.previewImage === kind;
-      image.classList.toggle('is-active', active);
-      image.setAttribute('aria-hidden', String(!active));
-    });
   }
 
   choices.forEach(choice => {
@@ -70,9 +45,4 @@
     });
   }
 
-  window.addEventListener('scroll', scheduleIntro, { passive: true });
-  window.addEventListener('resize', scheduleIntro, { passive: true });
-  window.addEventListener('hashchange', scheduleIntro);
-  reducedMotion.addEventListener('change', scheduleIntro);
-  scheduleIntro();
 })();

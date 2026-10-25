@@ -176,11 +176,11 @@ html[lang=en] .panel-description { letter-spacing:.04em; }
 .brand{display:inline-flex;align-items:center;gap:17px;letter-spacing:0}
 .brand-latin{font-family:SignatureLatin,Outfit,sans-serif;font-size:18px;font-weight:400;letter-spacing:.2em}
 .brand-han{font-family:SignatureHan,"PingFang SC",sans-serif;font-size:21px;font-weight:400;letter-spacing:.22em}
-.hero.image-panel{height:auto;min-height:950px;max-height:none;background:#000;padding:clamp(245px,29vw,420px) var(--pad) 100px}
-.hero .hero-media{height:clamp(650px,64vw,920px);bottom:auto;background:#000;mask-image:linear-gradient(transparent 0%,#000 12%,#000 40%,#0009 65%,transparent 100%);-webkit-mask-image:linear-gradient(transparent 0%,#000 12%,#000 40%,#0009 65%,transparent 100%)}
-.hero-media img{height:100%;top:0;object-position:center 45%;transform:translateY(var(--image-shift,0px))}
-.hero .panel-shade{background:linear-gradient(90deg,#0009 0%,transparent 23%,transparent 77%,#0009 100%),linear-gradient(180deg,#0004 0%,#0001 24%,#0006 43%,#000c 62%,#000 86%)}
-.hero .hero-copy{position:relative;inset:auto;max-width:1000px;margin:auto;text-align:center;animation:content-in 1s .15s both}
+.hero.image-panel{height:auto;min-height:0;max-height:none;background:#000;padding:0 0 100px}
+.hero .hero-media{position:relative;inset:auto;z-index:0;height:auto;background:#000;display:grid;place-items:center}
+.hero .hero-media img{position:static;display:block;width:auto;height:auto;max-width:100%;max-height:85svh;object-fit:contain;transform:none;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(180deg,transparent,#000 8%,#000 72%,transparent);mask-composite:intersect;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent),linear-gradient(180deg,transparent,#000 8%,#000 72%,transparent);-webkit-mask-composite:source-in}
+.hero .panel-shade{display:none}
+.hero .hero-copy{position:relative;inset:auto;z-index:1;max-width:1000px;margin:-120px auto 0;padding:0 var(--pad);text-align:center;animation:content-in 1s .15s both}
 .hero-copy #name{display:flex;flex-direction:column;align-items:center;gap:22px;padding:0;line-height:1.2}
 .signature-han{font-family:SignatureHan,"PingFang SC",sans-serif;font-weight:400;font-size:clamp(68px,7vw,100px);letter-spacing:.28em;padding-left:.28em;order:1}
 .signature-latin{font-family:SignatureLatin,Outfit,sans-serif;font-weight:400;font-size:27px;letter-spacing:.34em;padding-left:.34em;order:2}
@@ -196,9 +196,8 @@ html[lang=en] .signature-han{order:2;font-size:31px;letter-spacing:.3em;padding-
 html[lang=en] .hero-introduction{font-size:18px;line-height:1.95;letter-spacing:.015em}
 @media(max-width:760px){
  .brand{gap:12px}.brand-latin{font-size:15px;letter-spacing:.16em}.brand-han{font-size:18px}
- .hero.image-panel{min-height:850px;padding:230px 26px 95px}
- .hero .hero-media{height:630px}.hero-media img{object-position:52% center}
- .hero .panel-shade{background:linear-gradient(90deg,#0004,transparent 25%,transparent 75%,#0004),linear-gradient(180deg,#0003 0%,#0002 20%,#0008 42%,#000 76%)}
+ .hero.image-panel{min-height:0;padding:0 0 95px}
+ .hero .hero-media img{max-height:75svh}.hero .hero-copy{margin-top:-25px;padding:0 26px}
  .hero-copy #name{gap:19px}.signature-han{font-size:64px}.signature-latin{font-size:22px}
  .hero .hero-identity{font-size:10px;letter-spacing:.13em;line-height:1.9;margin-top:24px}
  .hero .hero-role{font-size:11px}.hero-introduction{margin-top:38px;font-size:14px;line-height:2.1;letter-spacing:.02em;max-width:480px}

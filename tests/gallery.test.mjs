@@ -27,3 +27,10 @@ import {galleryPosition} from '../public/galleries.mjs';
 test('carousel position follows actual variable-width image offsets',()=>{
  assert.equal(galleryPosition(0,[0,300,720]),0);assert.equal(galleryPosition(320,[0,300,720]),1);assert.equal(galleryPosition(700,[0,300,720]),2);assert.equal(galleryPosition(0,[]),0);
 });
+
+test('opening and selected entrance covers survive publishing without gallery projects',()=>{
+ const result=publicContent({...site,hero:'/assets/opening.webp',selectedPreview:'/assets/entrance.webp'},[]);
+ assert.equal(result.site.hero,'/assets/opening.webp');
+ assert.equal(result.site.selectedPreview,'/assets/entrance.webp');
+ assert.deepEqual(result.site.homePhotos,[]);assert.deepEqual(result.projects,[]);
+});
