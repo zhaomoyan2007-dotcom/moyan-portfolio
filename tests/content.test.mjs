@@ -42,3 +42,8 @@ test('single-image media library results normalize consistently for gallery and 
   assert.equal(result.projects[0].cover,'/assets/test.webp');
   assert.equal(result.site.hero,'/assets/test.webp');
 });
+test('homepage introduction remains bilingual, accepts paragraphs and is optional for old content',()=>{
+  const intro={zh:'我是墨岩。\n\n摄影与电影摄影。',en:'I am Moyan.\n\nPhotography and cinematography.'};
+  assert.deepEqual(publicContent({...site,intro},[]).site.intro,intro);
+  assert.deepEqual(publicContent(site,[]).site.intro,{zh:'',en:''});
+});

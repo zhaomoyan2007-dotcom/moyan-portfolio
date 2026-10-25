@@ -31,7 +31,7 @@ async function start(){
       const raw=data.images||data.homePhotos||[];
       const images=typeof raw==='string'?[raw]:Array.isArray(raw)?raw:[];
       return window.h('article',{className:'cms-preview'},
-        window.h('h1',{},title),window.h('p',{},data.description?.zh||data.about?.zh||''),
+        window.h('h1',{},title),window.h('p',{},data.description?.zh||data.intro?.zh||data.about?.zh||''),
         ...images.map((src,i)=>window.h('img',{key:i,src:String(this.props.getAsset(src)),alt:`照片 ${i+1}`})));
     }});
     window.CMS.registerPreviewStyle('/admin/preview.css');

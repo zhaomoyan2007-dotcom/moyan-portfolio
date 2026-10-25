@@ -39,7 +39,10 @@ function renderArchive(){
 }
 function renderHome(){
   const {site,projects}=data;
-  byId('name').textContent=site.name;document.querySelector('.brand').textContent=site.name;
+  document.querySelector('.signature-han').textContent=site.name;document.querySelector('.brand-han').textContent=site.name;
+  const introduction=byId('hero-introduction');
+  const introText=localized(site.intro)||localized(site.about).split('\n')[0];
+  introduction.replaceChildren(...introText.split(/\n\s*\n/).filter(Boolean).map(text=>node('p','',text)));
   document.querySelector('.hero-role').textContent=localized(site.identity);
   document.querySelectorAll('[data-site-image]').forEach(img=>{img.src=imageURL(site[img.dataset.siteImage],1800);img.removeAttribute('srcset');img.alt=language==='zh'?'墨岩的摄影作品':'Photography by 墨岩';});
   byId('home-photos').replaceChildren(...site.homePhotos.map((src,i)=>{const figure=node('figure');figure.append(photograph(src,i));return figure;}));
