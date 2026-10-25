@@ -45,6 +45,9 @@
         <a href="#all/documentary" data-i18n="documentary">纪实</a>
         <a href="#all/portrait" data-i18n="portrait">人像</a>
         <a href="#all/contemporary" data-i18n="contemporary">当代创作</a>
+        <a href="#all/sports" data-i18n="sports">体育</a>
+        <a href="#all/aerial" data-i18n="aerial">航拍</a>
+        <a href="#all/nature" data-i18n="nature">自然风光</a>
       </div>
       <div class="panel-group">
         <a class="panel-heading" href="#all/film" data-i18n="film">短片创作</a>
@@ -91,8 +94,8 @@
         <div class="selection-heading">
           <p class="eyebrow">PHOTOGRAPHY</p><h2 id="photo-heading" data-i18n="photography">图片摄影</h2>
         </div>
-        <div class="selected-photo-grid" id="home-photos"></div>
-        <div class="archive-grid featured-projects" id="featured-photography"></div>
+        <nav class="photography-index" id="photography-index" aria-label="摄影分类 / Photography categories"></nav>
+        <div id="photography-categories"></div>
       </section>
       <section id="cinematography" class="work-section film-section image-panel" aria-labelledby="film-heading" tabindex="-1">
         <div class="panel-media"><img src="/assets/selected-photos/02-1800.webp" width="1920" height="816" alt="短片入口的测试照片" data-alt="testImageAlt" loading="lazy"></div>
@@ -120,7 +123,7 @@
     <footer id="about" class="site-footer section-shell" tabindex="-1">
       <div class="footer-grid">
         <div class="footer-about"><h2 data-i18n="footerTitle">关于墨岩</h2><p id="about-text">以图片摄影与电影摄影展开创作。<br>这里将补充个人简介与合作联系方式。</p></div>
-        <div><h3 data-i18n="art">艺术摄影创作</h3><a href="#all/documentary" data-i18n="documentary">纪实</a><a href="#all/portrait" data-i18n="portrait">人像</a><a href="#all/contemporary" data-i18n="contemporary">当代创作</a></div>
+        <div><h3 data-i18n="art">艺术摄影创作</h3><a href="#all/documentary" data-i18n="documentary">纪实</a><a href="#all/portrait" data-i18n="portrait">人像</a><a href="#all/contemporary" data-i18n="contemporary">当代与情绪</a><a href="#all/sports" data-i18n="sports">体育</a><a href="#all/aerial" data-i18n="aerial">航拍</a><a href="#all/nature" data-i18n="nature">自然风光</a></div>
         <div><h3 data-i18n="film">短片创作</h3><a href="#all/film" data-i18n="viewAllProjects">浏览全部项目</a><a href="#selected" data-i18n="navSelected">精选作品</a></div>
         <div><h3 data-i18n="contactLabel">联系与合作</h3><div id="contact-content"></div><a href="#home" data-i18n="backTop">回到顶部</a></div>
       </div>
@@ -131,6 +134,12 @@
     <div class="dialog-toolbar"><span data-i18n="dialogPreview">项目预览</span><span id="dialog-index" hidden></span>
       <div class="dialog-actions"><div class="language" role="group" aria-label="Language / 语言"><button type="button" data-language="zh" aria-pressed="true">中</button><span aria-hidden="true">/</span><button type="button" data-language="en" aria-pressed="false">EN</button></div><button type="button" id="dialog-close" aria-label="关闭 / Close"><span data-i18n="close">关闭</span><span aria-hidden="true">×</span></button></div>
     </div><div id="dialog-content"></div>
+  </dialog>
+  <dialog id="photo-dialog" aria-labelledby="viewer-heading">
+    <div class="viewer-toolbar"><span class="viewer-heading" id="viewer-heading"></span><span class="viewer-counter" aria-live="polite"></span><button type="button" data-viewer-close aria-label="关闭 / Close">×</button></div>
+    <div class="viewer-stage"><img class="viewer-image" alt="" draggable="false"><p class="viewer-error" hidden role="alert"></p></div>
+    <button type="button" class="viewer-arrow viewer-previous" data-viewer-previous aria-label="上一张 / Previous photograph">←</button>
+    <button type="button" class="viewer-arrow viewer-next" data-viewer-next aria-label="下一张 / Next photograph">→</button>
   </dialog>
 </body>
 </html>

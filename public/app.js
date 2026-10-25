@@ -1,15 +1,22 @@
 import { copy } from './copy.js';
-import { imageURL } from './media.mjs';
+import { imageURL,galleryLayout } from './media.mjs';
+import { createGallery,emptyGallery } from './galleries.mjs';
+import { createPhotoViewer } from './photo-viewer.mjs';
 
 Object.assign(copy.zh,{categoryEmpty:'这个分类暂时没有已发布的项目。',previewNote:'墨岩 · 图片摄影与电影摄影',testImageAlt:'短片入口的测试照片',projectMissing:'项目不存在或已撤下',imageError:'图片暂时无法加载',loadError:'暂时无法读取作品，请刷新页面重试。',viewSelectedProject:'查看项目'});
 Object.assign(copy.en,{categoryEmpty:'No published projects in this category yet.',previewNote:'PHOTOGRAPHY & CINEMATOGRAPHY',testImageAlt:'A test photograph used for the short film section',projectMissing:'Project unavailable',imageError:'Image unavailable',loadError:'Unable to load the portfolio. Please refresh to try again.',viewSelectedProject:'VIEW PROJECT'});
-const categories=['all','art','documentary','portrait','contemporary','film'];
+Object.assign(copy.zh,{art:'摄影作品',contemporary:'当代与情绪',sports:'体育',aerial:'航拍',nature:'自然风光',environment:'环境人像',studio:'棚拍人像',basketball:'篮球赛',football:'足球赛',previousPhoto:'上一张照片',nextPhoto:'下一张照片',workPending:'作品整理中',unclassified:'未分类精选',archiveNote:'纪实、当代与情绪、人像、体育、航拍与自然风光。<br>从图片摄影，到短片创作。'});
+Object.assign(copy.en,{art:'Photography',contemporary:'Contemporary & Mood',sports:'Sports',aerial:'Aerial',nature:'Nature & Landscape',environment:'Environmental Portraits',studio:'Studio Portraits',basketball:'Basketball',football:'Football',previousPhoto:'Previous photograph',nextPhoto:'Next photograph',workPending:'WORK IN PROGRESS',unclassified:'Selected photographs',archiveNote:'Documentary, contemporary work, portraits, sports, aerial and landscape.<br>From still photographs to short films.'});
+const photoCategories=['documentary','contemporary','portrait','sports','aerial','nature'];
+const categories=['all','art',...photoCategories,'film'];
 const byId=id=>document.getElementById(id);
 const home=byId('home-view'), archive=byId('archive-view'), dialog=byId('project-dialog');
 let language='zh', data, filter='all', activeProject=null, returnHash='#all', projectTrigger=null;
 try{language=localStorage.getItem('moyan-preview-language')==='en'?'en':'zh';}catch{}
 const t=key=>copy[language][key]??copy.zh[key]??key;
 const localized=value=>value?.[language]||'';
+const photoViewer=createPhotoViewer(byId('photo-dialog'),t);
+let galleryDisposers=[];
 function node(tag,className,text){const element=document.createElement(tag);if(className)element.className=className;if(text)element.textContent=text;return element;}
 function photograph(src,index=0,eager=false){
   const img=node('img');
@@ -45,15 +52,51 @@ function renderHome(){
   introduction.replaceChildren(...introText.split(/\n\s*\n/).filter(Boolean).map(text=>node('p','',text)));
   document.querySelector('.hero-role').textContent=localized(site.identity);
   document.querySelectorAll('[data-site-image]').forEach(img=>{img.src=imageURL(site[img.dataset.siteImage],1800);img.removeAttribute('srcset');img.alt=language==='zh'?'墨岩的摄影作品':'Photography by 墨岩';});
-  byId('home-photos').replaceChildren(...site.homePhotos.map((src,i)=>{const figure=node('figure');figure.append(photograph(src,i));return figure;}));
-  byId('featured-photography').replaceChildren(...projects.filter(p=>p.featured&&p.category!=='film').map(card));
+  renderPhotoSections(site,projects);
+  document.getElementById('selected').classList.toggle('is-empty',!site.homePhotos.length&&!projects.some(p=>p.featured&&p.category!=='film'));
+  document.getElementById('cinematography').classList.toggle('is-empty',!projects.some(p=>p.featured&&p.category==='film'));
   byId('featured-films').replaceChildren(...projects.filter(p=>p.featured&&p.category==='film').map(card));
-  byId('featured-photography').hidden=!byId('featured-photography').childElementCount;
   byId('featured-films').hidden=!byId('featured-films').childElementCount;
   byId('about-text').textContent=localized(site.about);
   const contact=byId('contact-content');contact.replaceChildren();
   if(site.contactEmail){const email=node('a','',site.contactEmail);email.href=`mailto:${site.contactEmail}`;contact.append(email);}
   if(site.contactURL){const link=node('a','',localized(site.contactLabel)||t('contactLabel'));link.href=site.contactURL;link.target='_blank';link.rel='noopener noreferrer';contact.append(link);}
+}
+function renderPhotoSections(site,projects){
+  const positions=new Map([...document.querySelectorAll('[data-gallery]')].map(element=>[element.dataset.gallery,element.querySelector('.photo-track').scrollLeft]));
+  galleryDisposers.forEach(dispose=>dispose());galleryDisposers=[];
+  const root=byId('photography-categories');root.replaceChildren();
+  const index=byId('photography-index');index.replaceChildren();index.setAttribute('aria-label',language==='zh'?'摄影分类':'Photography categories');
+  function addRow(parent,key,images,layout,labelKey){
+    const gallery=createGallery({id:key,images,layout,label:t(labelKey),language,makeImage:photograph,onOpen:(list,i,trigger)=>photoViewer.open(list,i,labelKey,trigger)});
+    parent.append(gallery.element);galleryDisposers.push(gallery.destroy);
+    if(positions.has(key))gallery.element.querySelector('.photo-track').scrollLeft=positions.get(key);
+  }
+  if(site.homePhotos.length){
+    const legacy=node('section','photography-category');legacy.append(node('h3','category-title',t('unclassified')));addRow(legacy,'legacy',site.homePhotos,'carousel','unclassified');root.append(legacy);
+  }
+  photoCategories.forEach(category=>{
+    const section=node('section','photography-category');section.id=`photography-${category}`;section.tabIndex=-1;
+    const title=node('h3','category-title',t(category));title.id=`heading-${category}`;section.setAttribute('aria-labelledby',title.id);
+    section.append(node('p','eyebrow',copy.en[category].toUpperCase()),title);
+    const anchor=node('a','',t(category));anchor.href=`#photography-${category}`;index.append(anchor);
+    const selected=projects.filter(p=>p.featured&&p.category===category);
+    const subgroups=category==='portrait'?['environment','studio']:category==='sports'?['basketball','football']:['none'];
+    subgroups.forEach(subgroup=>{
+      const group=node('div','category-group');
+      if(subgroup!=='none'){const heading=node('h4','subgroup-title',t(subgroup));if(language==='zh')heading.append(node('span','',copy.en[subgroup].toUpperCase()));group.append(heading);}
+      const rows=subgroup==='none'?selected:selected.filter(p=>p.subgroup===subgroup);
+      const layout=galleryLayout(category,subgroup);
+      if(rows.length)rows.forEach(project=>addRow(group,project.id,project.images,layout,subgroup==='none'?category:subgroup));
+      else{
+        const count=['documentary','contemporary'].includes(category)?2:1;
+        for(let i=0;i<count;i++)group.append(emptyGallery(layout,layout==='grid'?2:3));
+        group.append(node('p','category-pending',t('workPending')));
+      }
+      section.append(group);
+    });
+    root.append(section);
+  });
 }
 function renderProject(){
   const project=data.projects.find(p=>p.id===activeProject);
@@ -73,10 +116,11 @@ function setLanguage(next){
   document.querySelectorAll('[data-i18n]').forEach(element=>{element.innerHTML=t(element.dataset.i18n);});
   document.querySelectorAll('[data-alt]').forEach(element=>{element.alt=t(element.dataset.alt);});
   document.querySelectorAll('[data-language]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.language===language)));
-  renderHome();renderArchive();if(activeProject)renderProject();
+  renderHome();renderArchive();if(activeProject)renderProject();photoViewer.refresh();
   try{localStorage.setItem('moyan-preview-language',language);}catch{}
 }
 function route(){
+  if(byId('photo-dialog').open)byId('photo-dialog').close();
   const hash=location.hash||'#home';
   if(hash.startsWith('#project/')){
     activeProject=hash.slice(9);renderProject();

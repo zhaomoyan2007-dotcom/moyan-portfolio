@@ -1,14 +1,5 @@
 {
-  "homePhotos": [
-    "/assets/selected-photos/01-1800.webp",
-    "/assets/selected-photos/02-1800.webp",
-    "/assets/selected-photos/03-1800.webp",
-    "/assets/selected-photos/04-1800.webp",
-    "/assets/selected-photos/05-1800.webp",
-    "/assets/selected-photos/06-1800.webp",
-    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792891505/IMG_20260317_185015.jpg",
-    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792896258/moyan-web/d30c4e76-3ec7-4caf-90ba-4376c883e6f6.webp"
-  ],
+  "homePhotos": [],
   "name": "墨岩",
   "selectedPreview": "/assets/selected-photos/01-1800.webp",
   "about": {
