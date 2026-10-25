@@ -6,7 +6,7 @@ test('scale preserves aspect, does not upscale and validates dimensions',()=>{
   assert.deepEqual(scaledSize(6000,4000),{width:3000,height:2000});
   assert.deepEqual(scaledSize(1000,2000),{width:1000,height:2000});
   assert.deepEqual(scaledSize(4000,6000),{width:2000,height:3000});
-  assert.throws(()=>scaledSize(0,100));assert.throws(()=>scaledSize(10000,10000));
+  assert.throws(()=>scaledSize(0,100));assert.deepEqual(scaledSize(10000,10000),{width:3000,height:3000});
 });
 test('reject unsupported and oversized input, identify actual image bytes',async()=>{
   await assert.rejects(validateSource(new File(['bad'],'a.jpg',{type:'image/jpeg'})));
@@ -15,8 +15,8 @@ test('reject unsupported and oversized input, identify actual image bytes',async
   assert.equal(await validateSource(new File([new Uint8Array([255,216,255,224])],'a.jpg')),'image/jpeg');
 });
 test('compression retries size and quality, releases bitmap, does not silently exceed target',async()=>{
-  let closed=false,calls=0;const bitmap={width:6000,height:4000,close(){closed=true;}};
-  const output=await compressImage(new File([new Uint8Array([255,216,255,224])],'large.jpg'),{
+  let closed=false,calls=0;const bitmap={width:3000,height:2000,close(){closed=true;}};
+  const output=await compressImage(new File([new Uint8Array([255,216,255,192,0,17,8,15,160,23,112,3,1,17,0,2,17,0,3,17,0,255,217])],'large.jpg'),{
     decode:async()=>bitmap,encode:async(w,h,q)=>{calls++;return new Blob([new Uint8Array(q>.7?5*1024*1024:500000)],{type:'image/webp'});}
   });
   assert.ok(calls>1);assert.ok(closed);assert.equal(output.file.type,'image/webp');assert.equal(output.width,3000);assert.ok(output.file.size<4*1024*1024);

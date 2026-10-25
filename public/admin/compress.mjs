@@ -1,6 +1,8 @@
+import {readImageInfo} from './image-info.mjs';
+export {readImageInfo};
 export const targetBytes=4*1024*1024;
 export function scaledSize(width,height,max=3000){
-  if(!Number.isFinite(width)||!Number.isFinite(height)||width<1||height<1||width*height>60000000)throw new Error('图片尺寸无效或超过6000万像素，请先导出较小副本');
+  if(!Number.isFinite(width)||!Number.isFinite(height)||width<1||height<1||width*height>200000000||width>30000||height>30000)throw new Error('图片尺寸无效或超过2亿像素，请先导出较小副本');
   const ratio=Math.min(1,max/Math.max(width,height));
   return {width:Math.max(1,Math.round(width*ratio)),height:Math.max(1,Math.round(height*ratio))};
 }
@@ -21,10 +23,16 @@ export async function validateSource(file){
 }
 export async function compressImage(file,dependencies={}){
   await validateSource(file);
-  const bitmap=await (dependencies.decode||createImageBitmap)(file);
+  const info=await readImageInfo(file);
+  const target=scaledSize(info.width,info.height);
+  let bitmap;
+  try{
+    bitmap=await (dependencies.decode||createImageBitmap)(file,{imageOrientation:'from-image',resizeWidth:target.width,resizeHeight:target.height,resizeQuality:'high'});
+  }catch{throw new Error('浏览器未能解码这张照片，请用新版Chrome重试，或导出较小的JPEG副本');}
   let canvas;
   try{
-    let {width,height}=scaledSize(bitmap.width,bitmap.height);
+    if(bitmap.width!==target.width||bitmap.height!==target.height)throw new Error('浏览器未能按要求缩小图片，请更新浏览器后重试');
+    let {width,height}=target;
     const encode=dependencies.encode||((w,h,quality)=>{
       canvas||=(document.createElement('canvas'));canvas.width=w;canvas.height=h;
       const context=canvas.getContext('2d',{colorSpace:'srgb'});
