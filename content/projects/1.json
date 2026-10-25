@@ -1,0 +1,36 @@
+{
+  "featured": true,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792922036/moyan-web/0c53052e-32c2-4213-b7c6-ffdf06f5e9e9.webp",
+  "title": {
+    "zh": "海南志",
+    "en": "Hainan Chronicle"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921899/moyan-web/eb3aeeba-cf9f-4d0a-adcd-6585281b3727.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921902/moyan-web/1e247b7c-44db-4815-828c-e1fd14ff4245.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921904/moyan-web/2e5ca8c8-df2e-4fd3-ae4b-90f71e702637.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921907/moyan-web/b737456c-133b-435f-8c8f-e005ed29501d.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921909/moyan-web/77b0f83b-6e65-4e1b-b785-89910d8f7fec.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921912/moyan-web/788338ef-93b7-4a17-b2f4-c8946d5d5683.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921915/moyan-web/108bae38-5316-4a78-8d97-00af79dbffdb.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921917/moyan-web/188f1b6c-6ca2-4ed7-9159-5ad6ac7dad9e.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921919/moyan-web/d0367c63-3f2f-4fad-8e67-0e735b07d4f5.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921922/moyan-web/daabf1c9-914a-4561-8a59-cf8b60584ade.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921924/moyan-web/4d74eac4-402b-4c8e-814e-97d4fecdef15.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921927/moyan-web/5a7dda73-da0f-4a3b-816c-48143c2ab16a.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921930/moyan-web/af576d9d-8a1a-413d-8f98-402cc0c61cc1.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921932/moyan-web/2f34b2b3-dc90-4b1f-bf09-57bd1ae782ff.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921935/moyan-web/276c3c62-eb27-4b11-bba7-43d1367f7a41.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921937/moyan-web/dedcb1bd-0ca1-49ed-9ce9-75a814732f34.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921939/moyan-web/05a09f7b-70b6-4fbb-a66e-ac35d002e7f1.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921942/moyan-web/e74a10d2-4900-4d24-9fb7-95746a7be9fc.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921944/moyan-web/0a2dd942-01e2-4a4e-a545-c5c331cb2c00.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792921947/moyan-web/8af05750-ed33-4340-a0a6-3a7b4a5ce273.webp"
+  ],
+  "id": "1",
+  "year": "2025",
+  "category": "documentary",
+  "subgroup": "none"
+}
