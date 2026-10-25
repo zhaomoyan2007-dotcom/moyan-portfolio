@@ -176,7 +176,7 @@ html[lang=en] .panel-description { letter-spacing:.04em; }
 .brand{display:inline-flex;align-items:center;gap:17px;letter-spacing:0}
 .brand-latin{font-family:SignatureLatin,Outfit,sans-serif;font-size:18px;font-weight:400;letter-spacing:.2em}
 .brand-han{font-family:SignatureHan,"PingFang SC",sans-serif;font-size:21px;font-weight:400;letter-spacing:.22em}
-.hero.image-panel{height:auto;min-height:0;max-height:none;background:#000;padding:0 0 100px}
+.hero.image-panel{height:auto;min-height:0;max-height:none;background:#000;padding:0}
 .hero .hero-media{position:relative;inset:auto;z-index:0;height:auto;background:#000;display:grid;place-items:center}
 /* A broad, eased falloff avoids the sharp rectangular border of a short linear fade. */
 .hero .hero-media img,.selected-section .selected-preview img{
@@ -187,11 +187,11 @@ html[lang=en] .panel-description { letter-spacing:.04em; }
  -webkit-mask-image:var(--edge-fade),var(--vertical-fade);-webkit-mask-composite:source-in;
 }
 .selected-section.image-panel{display:grid;height:auto;min-height:0;max-height:none;margin-top:0;background:#000;overflow:hidden}
-.selected-section .selected-preview{position:relative;inset:auto;grid-area:1/1;z-index:0;height:auto;display:grid;place-items:center;background:#000}
+.selected-section .selected-preview{position:relative;inset:auto;grid-area:2/1;z-index:0;height:auto;display:grid;place-items:center;background:#000}
 .selected-section .panel-shade{display:none}
-.selected-section .selected-copy{position:relative;inset:auto;grid-area:1/1;align-self:start;z-index:1;width:100%;padding:50px var(--pad);margin:clamp(100px,24vw,350px) auto 0}
-.selected-section.is-empty .selected-copy{grid-area:auto}
-.selected-copy .cta{background:#0007}.selected-copy .cta:hover,.selected-copy .cta:focus-visible{background:white}
+.selected-section .selected-copy{position:relative;inset:auto;grid-area:1/1;z-index:1;width:100%;padding:70px var(--pad) 0;margin:0 auto}
+.selected-section.is-empty .selected-copy{grid-area:1/1}
+.selected-copy h2{font-size:clamp(28px,3vw,40px);letter-spacing:.12em}.selected-copy .panel-description{color:#aaa}.selected-copy .cta-row{gap:16px;margin-top:32px}.selected-copy .cta{background:#0007;min-width:180px;padding:15px 26px;font-size:12px}.selected-copy .cta:hover,.selected-copy .cta:focus-visible{background:white}
 .hero .panel-shade{display:none}
 .hero .hero-copy{position:relative;inset:auto;z-index:1;max-width:1000px;margin:clamp(-500px,-38vw,-280px) auto 0;padding:0 var(--pad);text-align:center;animation:content-in 1s .15s both}
 .hero-copy #name{display:flex;flex-direction:column;align-items:center;gap:22px;padding:0;line-height:1.2}
@@ -209,8 +209,8 @@ html[lang=en] .signature-han{order:2;font-size:31px;letter-spacing:.3em;padding-
 html[lang=en] .hero-introduction{font-size:18px;line-height:1.95;letter-spacing:.015em}
 @media(max-width:760px){
  .brand{gap:12px}.brand-latin{font-size:15px;letter-spacing:.16em}.brand-han{font-size:18px}
- .hero.image-panel{min-height:0;padding:0 0 95px}
- .hero .hero-copy{margin-top:-25px;padding:0 26px}.selected-section .selected-copy{align-self:center;margin:0 auto;padding:35px 25px}
+ .hero.image-panel{min-height:0;padding:0}
+ .hero .hero-copy{margin-top:-25px;padding:0 26px}.selected-section .selected-copy{margin:0 auto;padding:54px 25px 0}.selected-copy .cta-row{gap:12px;margin-top:28px}.selected-copy .cta{min-width:145px;padding:14px 18px;font-size:11px}
  .hero-copy #name{gap:19px}.signature-han{font-size:64px}.signature-latin{font-size:22px}
  .hero .hero-identity{font-size:10px;letter-spacing:.13em;line-height:1.9;margin-top:24px}
  .hero .hero-role{font-size:11px}.hero-introduction{margin-top:38px;font-size:14px;line-height:2.1;letter-spacing:.02em;max-width:480px}

@@ -10,7 +10,7 @@ const copy = {
 };
 
 Object.assign(copy.zh, {
-  enterSelected:'探索精选作品', selectedDescription:'静止的画面，流动的影像。',
+  exploreSelected:'探索精选作品集',stillImages:'静态影像',filmCreation:'短片创作',enterSelected:'探索精选作品', selectedDescription:'静止的画面，流动的影像。',
   photoCategories:'纪实 / 人像 / 当代创作', viewSelectedProject:'查看精选项目', viewAllProjects:'浏览全部项目',
   filmMenuNote:'按项目浏览影片与参与职责。', contactLabel:'联系与合作', contactDraft:'正式联系方式将在这里呈现。',
   referenceCredit:'哈苏官网参考图 · 非墨岩作品', selectedCredit:'参考图与示意画面 · 非墨岩作品',
@@ -24,6 +24,7 @@ Object.assign(copy.zh, {
   photoConcept:'这里将展示你的正式系列、创作观念和项目背景。当前使用参考图与示意图检查版式，不代表墨岩的实际作品。'
 });
 Object.assign(copy.en, {
+  exploreSelected:'Explore Selected Works',stillImages:'Still Images',filmCreation:'Short Films',
   enterSelected:'EXPLORE SELECTED WORKS', selectedDescription:'Still images. Moving stories.',
   photoCategories:'Documentary / Portraits / Contemporary', viewSelectedProject:'VIEW SELECTED PROJECT', viewAllProjects:'VIEW ALL PROJECTS',
   filmMenuNote:'Explore films and individual contributions by project.', contactLabel:'CONTACT', contactDraft:'Contact details will appear here.',
