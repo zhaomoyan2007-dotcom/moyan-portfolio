@@ -1,7 +1,11 @@
 {
   "homePhotos": [],
   "name": "墨岩",
-  "selectedPreview": "/assets/selected-photos/01-1800.webp",
+  "intro": {
+    "zh": "我是墨岩，专注于图片摄影与电影摄影。\n\n在静止的画面与流动的影像之间，我以摄影展开观察与表达。这里呈现我的艺术摄影创作与短片项目，也记录每个项目背后的创作思考。",
+    "en": "I am Moyan, working across photography and cinematography.\n\nThrough still photographs and moving images, I observe and express. This is a collection of my art photography and short-film projects, alongside the ideas and creative decisions behind them."
+  },
+  "selectedPreview": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792916144/moyan-web/f34c63a7-e7e2-495a-bade-ed3c6e4620c7.webp",
   "about": {
     "zh": "以图片摄影与电影摄影展开创作。\n这里将补充个人简介与合作联系方式。",
     "en": "Working across photography and cinematography.\nA biography and contact details will be added here."
@@ -12,14 +16,10 @@
     "en": "CONTACT"
   },
   "schemaVersion": 1,
-  "hero": "/assets/selected-photos/01-1800.webp",
+  "hero": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792916105/moyan-web/c0aa7862-8910-4c89-9459-6bee3280138a.webp",
   "contactEmail": "",
   "identity": {
     "zh": "摄影 · 电影摄影",
     "en": "PHOTOGRAPHY · CINEMATOGRAPHY"
-  },
-  "intro": {
-    "zh": "我是墨岩，专注于图片摄影与电影摄影。\n\n在静止的画面与流动的影像之间，我以摄影展开观察与表达。这里呈现我的艺术摄影创作与短片项目，也记录每个项目背后的创作思考。",
-    "en": "I am Moyan, working across photography and cinematography.\n\nThrough still photographs and moving images, I observe and express. This is a collection of my art photography and short-film projects, alongside the ideas and creative decisions behind them."
   }
 }
