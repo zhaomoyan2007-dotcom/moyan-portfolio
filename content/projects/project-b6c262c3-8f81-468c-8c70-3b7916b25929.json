@@ -1,0 +1,32 @@
+{
+  "featured": true,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024530/moyan-web/bf94f93d-1e60-4a57-a21c-1dbe38915456.webp",
+  "title": {
+    "zh": "海南的夏天",
+    "en": "Hainan's summer"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024475/moyan-web/7548058a-ab88-46e6-9b6d-e8eaff7a8ceb.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024445/moyan-web/b17a7c57-cdf5-4a46-b858-02407c57440b.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024466/moyan-web/547b7da7-edf1-4c3b-aff4-5a1d0364be0c.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024457/moyan-web/9a0e22fd-6966-4447-95f6-4d579852fcd4.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024451/moyan-web/386eacee-ab00-4441-af69-6ec044c04340.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024398/moyan-web/18bb5a74-8bab-4f07-ad6a-7438d9173ceb.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024406/moyan-web/9d54d382-4a94-4139-9a10-b2045edabfa0.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024420/moyan-web/8ee7c720-3432-4c3f-b9ab-621d97ca6660.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024428/moyan-web/81609ffb-3f46-4ca4-b9af-5bc9b38d156b.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024402/moyan-web/9778bdce-58f1-4c0b-8f96-f2f901c0e3c7.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024433/moyan-web/c7cfcec6-3c11-4549-947e-85b716ac2444.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024436/moyan-web/4a7d7716-da31-45ec-b15a-8417f7c6bc27.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024442/moyan-web/f67c4555-2f62-4574-80d3-b0d7a9e519a6.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024394/moyan-web/8da306e6-3f33-49ca-b73f-df45f7a94034.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024454/moyan-web/5881c05c-5ae4-4ea7-a8ce-8719e96e48eb.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024462/moyan-web/d2d25e75-7ce8-4246-b02c-0b6e5fa4b3c9.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793024470/moyan-web/23d28b85-32f4-45a1-bd64-0bd03f6b815e.webp"
+  ],
+  "id": "project-b6c262c3-8f81-468c-8c70-3b7916b25929",
+  "category": "contemporary",
+  "subgroup": "none"
+}
