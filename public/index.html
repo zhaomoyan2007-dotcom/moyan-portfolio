@@ -11,6 +11,7 @@
   <link rel="preload" href="assets/fonts/Signature-Han.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/Signature-Latin.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="films.css">
   <script type="module" src="app.js"></script>
   <script src="experience.js" defer></script>
   <script src="navigation.js" defer></script>
@@ -90,16 +91,14 @@
         <nav class="photography-index" id="photography-index" aria-label="摄影分类 / Photography categories"></nav>
         <div id="photography-categories"></div>
       </section>
-      <section id="cinematography" class="work-section film-section image-panel" aria-labelledby="film-heading" tabindex="-1">
-        <div class="panel-media"><img src="/assets/selected-photos/02-1800.webp" width="1920" height="816" alt="短片入口的测试照片" data-alt="testImageAlt" loading="lazy"></div>
-        <div class="panel-shade" aria-hidden="true"></div>
-        <div class="panel-copy">
-          <p class="eyebrow">SHORT FILMS / CINEMATOGRAPHY</p><h2 id="film-heading" data-i18n="shortFilms">短片</h2>
-          <div class="cta-row"><a class="cta" href="#all/film" data-i18n="exploreFilm">浏览短片创作</a></div>
+      <section id="cinematography" class="film-portfolio section-shell" aria-labelledby="film-heading" tabindex="-1">
+        <div class="selection-heading">
+          <p class="eyebrow">SHORT FILMS / CINEMATOGRAPHY</p>
+          <h2 id="film-heading" data-i18n="filmCreation">短片创作</h2>
         </div>
-        
+        <div id="film-projects"></div>
+        <p id="film-empty" class="film-empty" data-i18n="filmEmpty" hidden>短片作品整理中。</p>
       </section>
-      <div class="archive-grid featured-projects section-shell" id="featured-films"></div>
       <section class="archive-callout section-shell">
         <p class="eyebrow">THE COMPLETE COLLECTION</p><h2 data-i18n="allProjects">全部作品</h2>
         <p data-i18n="archiveNote">纪实、人像、当代创作与短片。<br>从一个项目，进入另一种观看。</p>

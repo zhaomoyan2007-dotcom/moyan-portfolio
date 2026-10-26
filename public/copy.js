@@ -41,3 +41,6 @@ Object.assign(copy.en, {
 
 
 export { copy };
+
+Object.assign(copy.zh,{filmResponsibilities:'个人职责',filmStatement:'创作阐述',filmCover:'代表画面',filmStill:'影片切片',filmEmpty:'短片作品整理中。'});
+Object.assign(copy.en,{filmResponsibilities:'CONTRIBUTIONS',filmStatement:'CREATIVE STATEMENT',filmCover:'Key frame',filmStill:'Film still',filmEmpty:'Short film projects are being prepared.'});
