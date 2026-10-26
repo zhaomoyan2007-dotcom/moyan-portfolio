@@ -1,0 +1,37 @@
+{
+  "projectDate": "2026-09",
+  "concept": {
+    "zh": "中戏导演校考第六名，北电高表学院的徐圣洁导演执导的生命与家庭主题短片，主要担任摄影、剪辑和音乐工作。48小时极限制片挑战，在分镜脚本缺失的情况下与导演现场沟通演员安排与摄影机调度，在每场结束后高效利用ChatGPT制作准确的分镜脚本。剪辑时擅长贴合导演艺术表达形式，用符合主题的配乐调配短片节奏，在素材量极少的情况下完成了最终的成品制作。",
+    "en": "Produced as part of a 48-hour filmmaking challenge, the project began without a complete shooting script. On set, I worked closely with the directors to coordinate actor blocking and camera movement. After each scene, I used ChatGPT to compile detailed shot-by-shot records of the footage. In the edit, I shaped the limited material around the directors’ artistic vision, using music that reflected the film’s themes to establish its rhythm and bring the finished piece together."
+  },
+  "featured": false,
+  "order": 0,
+  "status": "draft",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793015711/moyan-web/80f4d89e-fc35-4256-bcc0-98a0409ccf94.webp",
+  "title": {
+    "zh": "我才不是流浪狗",
+    "en": "I'm Not a Stray"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016683/moyan-web/8c7ced5c-6844-4ec1-bfbd-06e101f314af.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016606/moyan-web/dca6b886-8abb-4b4d-9ea2-227247be4176.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016610/moyan-web/d190c44f-3972-4c9d-82c7-0e58356ab878.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016622/moyan-web/7019272a-70a6-4bf7-b34a-3400f2dee3d0.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016618/moyan-web/c12acb8c-a91a-4738-99e2-bcf21316f1e8.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016627/moyan-web/2cc30098-7d3d-4866-8655-36637425a1fc.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016639/moyan-web/96a25944-1210-46ca-a596-3102c095499a.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016646/moyan-web/8fb692d5-7bde-44d9-ab7e-7eeac9172357.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016655/moyan-web/4d302468-cb4d-4ff8-b202-d35090484e0f.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016660/moyan-web/c6026cb4-2771-48b7-8cc5-e279d2b45fbe.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016669/moyan-web/d9f2c912-5114-465e-947f-542a902dd60a.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793016679/moyan-web/b03adebf-8d60-4ecd-ab5a-e5edb26c216d.webp"
+  ],
+  "id": "1",
+  "year": "",
+  "roles": {
+    "zh": "摄影｜场务｜剪辑｜音乐",
+    "en": "Cinematography | Production Assistant | Editing | Music"
+  },
+  "category": "film",
+  "subgroup": "none"
+}
