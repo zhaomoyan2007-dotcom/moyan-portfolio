@@ -88,7 +88,7 @@ function renderPhotoSections(site,projects){
     section.append(node('p','eyebrow',copy.en[category].toUpperCase()),title);
     const anchor=node('a','',t(category));anchor.href=`#photography-${category}`;index.append(anchor);
     const selected=projects.filter(p=>p.featured&&p.category===category);
-    const subgroups=category==='portrait'?['environment','studio']:category==='sports'?['basketball','football']:['none'];
+    const subgroups=category==='portrait'?['environment','studio']:['none'];
     subgroups.forEach(subgroup=>{
       const group=node('div','category-group');
       if(subgroup!=='none'){const heading=node('h4','subgroup-title',t(subgroup));if(language==='zh')heading.append(node('span','',copy.en[subgroup].toUpperCase()));group.append(heading);}
@@ -97,7 +97,7 @@ function renderPhotoSections(site,projects){
       if(rows.length)rows.forEach(project=>addRow(group,project.id,project.images,layout,subgroup==='none'?category:subgroup));
       else{
         const count=['documentary','contemporary'].includes(category)?2:1;
-        for(let i=0;i<count;i++)group.append(emptyGallery(layout,layout==='grid'?2:3));
+        for(let i=0;i<count;i++)group.append(emptyGallery(layout,3));
         group.append(node('p','category-pending',t('workPending')));
       }
       section.append(group);

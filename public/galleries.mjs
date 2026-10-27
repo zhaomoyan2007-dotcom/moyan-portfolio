@@ -10,8 +10,9 @@ export function createGallery({id,images,layout,label,language,makeImage,onOpen}
   const items=images.map((src,index)=>{
     const button=el('button','gallery-photo');button.type='button';button.setAttribute('aria-label',`${language==='zh'?'放大':'Enlarge'} · ${label} · ${index+1} / ${images.length}`);
     const image=makeImage(src,index);image.draggable=false;
-    const ratio=()=>{if(image.naturalWidth&&image.naturalHeight)button.style.setProperty('--photo-ratio',String(image.naturalWidth/image.naturalHeight));update();};
+    const ratio=()=>{if(image.naturalWidth&&image.naturalHeight){button.style.setProperty('--photo-ratio',String(image.naturalWidth/image.naturalHeight));image.width=image.naturalWidth;image.height=image.naturalHeight;}update();};
     image.addEventListener('load',ratio,{signal});
+    if(layout==='grid')image.sizes='(max-width: 520px) calc((100vw - 64px) / 2), (max-width: 760px) 29vw, 310px';
     button.append(image,el('span','photo-enlarge','＋'));button.lastChild.setAttribute('aria-hidden','true');
     button.onclick=()=>onOpen(images,index,button);track.append(button);return button;
   });

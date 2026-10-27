@@ -28,9 +28,12 @@ async function start(){
     const {projectIdControl}=await import('./project-id.mjs');
     window.CMS.registerWidget('project-id',projectIdControl(window.createClass,window.h));
     const {filmPreview}=await import('./film-preview.mjs');
+    const {photoPreview}=await import('./photo-preview.mjs');
+    const {galleryLayout}=await import('../media.mjs');
     const Preview=window.createClass({render(){
       const data=this.props.entry.get('data').toJS();
       if(data.category==='film')return filmPreview(data,window.h,this.props.getAsset);
+      if(['aerial','nature','sports'].includes(data.category))return photoPreview(data,window.h,this.props.getAsset,galleryLayout(data.category,data.subgroup));
       const title=data.title?.zh||data.name||'';
       const raw=data.images||data.homePhotos||[];
       const images=typeof raw==='string'?[raw]:Array.isArray(raw)?raw:[];
