@@ -1,0 +1,34 @@
+{
+  "projectDate": "2024-12",
+  "concept": {
+    "zh": "作为学校摄影社社长，拍摄清华附中广华学校高二一班篮球赛夺冠的纪录片，用汉斯季默的电影配乐串联起整个短片的叙事，增强戏剧性与故事感。",
+    "en": "As president of the school’s photography club, I filmed a documentary following the Grade 11, Class 1 basketball team at Tsinghua University High School’s Guanghua School as they won the championship. I used film music by Hans Zimmer to tie the narrative together, heightening the drama and giving the film a stronger sense of story."
+  },
+  "featured": false,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071377/moyan-web/90795958-cef7-40f3-9294-4f1f922774be.webp",
+  "title": {
+    "zh": "清华附分校篮球赛夺冠纪录片",
+    "en": "Tsinghua University High School Branch — A Basketball Championship Documentary"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071399/moyan-web/9d03f21c-982d-403e-8343-e71ced067ed6.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071401/moyan-web/cffb2424-ac85-4726-a26d-c4a94d87df0b.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071404/moyan-web/729184cc-d229-4970-a2f0-bc1bc40ab2ca.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071412/moyan-web/4855ab0e-f238-46c1-9aec-d452e900a6a2.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071415/moyan-web/216cab60-9026-435a-9edc-b9fef00e3663.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071418/moyan-web/dea2d028-664e-47a6-8800-841215c015c0.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071427/moyan-web/973a1800-39c5-4905-9b76-15243eca1f21.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071431/moyan-web/dc8bb1c4-186f-4b5b-8662-69cf937cc9b8.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071436/moyan-web/6c7f8b9d-8102-453e-a288-4b0f07d0479d.webp"
+  ],
+  "id": "project-85cdf4d3-008f-4b6f-94fb-6998ac6056e5",
+  "year": "",
+  "roles": {
+    "zh": "单人全流程创作",
+    "en": "Solo Production — From Concept to Final Edit"
+  },
+  "category": "film",
+  "subgroup": "none"
+}
