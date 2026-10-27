@@ -1,0 +1,34 @@
+{
+  "projectDate": "2024-07",
+  "concept": {
+    "zh": "旅途中用大疆无人机航拍甘南，回程后结合音乐，参考《航拍中国》纪录片拍摄手法与配乐选取进行剪辑。相关素材曾被甘南文旅发掘，期望进行合作用作旅游视频宣传。",
+    "en": "Filmed aerial footage of Gannan with a DJI drone while travelling, then edited it to music after returning, drawing inspiration from the cinematography and music selection of the documentary series Aerial China. The footage attracted interest from Gannan’s culture and tourism authorities, who expressed interest in collaborating on a tourism promotional video."
+  },
+  "featured": false,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071867/moyan-web/f5f4a92f-f41f-4466-9a5a-da09f13075f9.webp",
+  "title": {
+    "zh": "航拍甘南",
+    "en": "Aerial Gannan"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071896/moyan-web/0ed80361-3fdf-4ef8-974b-149a03ecb5f5.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071909/moyan-web/b062585a-bd9f-4a8b-931f-21bfc6933127.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071915/moyan-web/98a220da-1ec1-4b2d-b549-e908e00b6a70.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071923/moyan-web/4bd14229-be40-4a31-b310-f5abca7f885e.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071929/moyan-web/2d41e707-3d46-49d6-88cb-43f5b2c28093.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071942/moyan-web/b599209b-4aee-495e-9777-2b4598dbf3e8.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071951/moyan-web/7981e053-cd8b-4b57-b968-5e76993a1b50.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071953/moyan-web/687826c7-b3e2-493d-b73e-62397eeae62a.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793071957/moyan-web/9077ec07-75e6-41a5-b539-bc17f06d762f.webp"
+  ],
+  "id": "project-f44c70ad-4e3b-40ee-a9d9-0b88b8f6dcfb",
+  "year": "",
+  "roles": {
+    "zh": "单人创作",
+    "en": "Solo Project"
+  },
+  "category": "film",
+  "subgroup": "none"
+}
