@@ -63,10 +63,6 @@
       "zh": "当前关注",
       "en": "Current focus"
     },
-    "contactNote": {
-      "zh": "",
-      "en": ""
-    },
     "introBlocks": [
       {
         "text": {
@@ -205,7 +201,29 @@
     "profileLine": {
       "zh": "摄影创作者 / 北京电影学院 · 2026级本科在读",
       "en": "Image maker / Photography undergraduate · Beijing Film Academy, 2026 intake"
-    }
+    },
+    "contactsHeading": {
+      "zh": "联系方式",
+      "en": "Contact"
+    },
+    "contacts": [
+      {
+        "label": {
+          "zh": "微信",
+          "en": "WeChat"
+        },
+        "value": "",
+        "url": ""
+      },
+      {
+        "label": {
+          "zh": "邮箱",
+          "en": "Email"
+        },
+        "value": "",
+        "url": ""
+      }
+    ]
   },
   "identity": {
     "zh": "摄影 · 短片创作",

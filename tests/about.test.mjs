@@ -83,3 +83,34 @@ test('about omits current focus, places long-term goals before cooperation and p
   assert.equal(heading.tag,'h3');assert.equal(heading.className,'about-major-title');
  }
 });
+
+test('cooperation contacts preserve order, support editable labels and never render unsafe actions or removed notes',()=>{
+ const contacts=[{label:pair('微信','WeChat'),value:'sample-handle',url:''},{label:pair('作品邮箱','Email'),value:'artist@example.com',url:'mailto:artist@example.com'},{label:pair('无效链接','Invalid link'),value:'plain text',url:'javascript:alert(1)'},{label:pair('空项','Empty'),value:'',url:''}];
+ const site={name:'墨岩',hero:'/assets/test.webp',aboutPage:{...page,cooperationHeading:pair('与我合作','Work with me'),contactNote:pair('删除说明','Removed note'),contactsHeading:pair('联系方式','Contact'),contacts}};
+ const exported=publicContent(site,[]).site.aboutPage;
+ assert.deepEqual(exported.contacts,contacts);assert.equal(exported.contactNote,undefined);
+ for(const language of ['zh','en']){
+  const tree=aboutContent(h,site,language),text=flatten(tree),links=[];
+  const walk=n=>{if(!n||typeof n!=='object')return;if(n.tag==='a')links.push(n);(n.children||[]).forEach(walk);};walk(tree);
+  assert.match(text,/sample-handle.*artist@example.com.*plain text/);assert.doesNotMatch(text,/删除说明|Removed note|空项|Empty/);
+  assert.ok(links.some(v=>v.href==='mailto:artist@example.com'));assert.ok(links.every(v=>!v.href.startsWith('javascript:')));
+ }
+ const fields=cmsConfiguration({},true).config.collections[0].files[0].fields.find(f=>f.name==='aboutPage').fields;
+ assert.ok(!fields.some(f=>f.name==='contactNote'));assert.equal(fields.find(f=>f.name==='contacts').widget,'list');
+ assert.deepEqual(fields.find(f=>f.name==='contacts').fields.map(f=>f.name),['label','value','url']);
+});
+
+test('contacts alone keep the cooperation area visible and malformed contact lists fail explicitly',()=>{
+ const contacts=[{label:pair('微信','WeChat'),value:'sample-handle',url:''}];
+ const tree=aboutContent(h,{aboutPage:{contacts}},'en');assert.match(flatten(tree),/Contact.*WeChat.*sample-handle/);
+ for(const value of ['bad',Array(31).fill({})])assert.throws(()=>publicContent({name:'墨岩',hero:'/assets/test.webp',aboutPage:{contacts:value}},[]),/联系方式/);
+});
+
+test('intro emphasis supports editable bold spans without treating text as HTML or changing line breaks',()=>{
+ const value='普通 **关键能力**\n<script>alert(1)</script> 与 **核心软件**';
+ const tree=aboutContent(h,{aboutPage:{introBlocks:[{text:pair(value,'Plain **Key skill**')}]}});
+ const p=tree.children[0].children[2].children[0];
+ assert.deepEqual(p.children.filter(n=>n?.tag==='strong').map(flatten),['关键能力','核心软件']);
+ assert.ok(p.children.some(n=>typeof n==='string'&&n.includes('\n<script>')));
+ assert.equal(flatten(p).replaceAll(' ',''),value.replaceAll('**','').replaceAll(' ',''));
+});
