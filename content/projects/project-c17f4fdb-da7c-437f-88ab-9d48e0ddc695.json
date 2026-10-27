@@ -1,0 +1,36 @@
+{
+  "projectDate": "2025-02",
+  "concept": {
+    "zh": "独自策划、拍摄和剪辑以海南西岛为主题的音乐短片",
+    "en": "Independently conceived, filmed, and edited a short film set to music, centred on West Island, Hainan."
+  },
+  "featured": false,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070638/moyan-web/7c0394e8-ecde-454b-aa9c-325471c84002.webp",
+  "title": {
+    "zh": "西岛",
+    "en": "The west island"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070812/moyan-web/42fc60d3-b5b4-47e1-9276-ebcaba6d4eea.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070807/moyan-web/a21db1e5-9231-4ef1-bf48-1bb407aeaa75.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070851/moyan-web/504c34cf-be81-4d7b-9690-022b646ddac9.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070818/moyan-web/b680afcb-71c9-4ff7-a0b5-b5c94b13979b.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070832/moyan-web/962e2156-9fb1-4df7-9d4d-7399294d0e54.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070840/moyan-web/99cb413f-d41f-4a35-b473-ec1ce3870272.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070845/moyan-web/cc573860-9be0-4b0b-92e6-918b896d4518.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070848/moyan-web/21c6fbae-f56e-4172-a44b-01b79b124072.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070853/moyan-web/cdb0a362-ab81-46f3-853a-43d42b827f06.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070803/moyan-web/f10270bb-03e5-4e76-acef-11c60f0abc9e.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070800/moyan-web/9dd1da14-ac32-4174-ae4d-eb2fcc79d805.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070857/moyan-web/b41062da-32d4-418d-93ca-8939d56c405b.webp"
+  ],
+  "id": "project-c17f4fdb-da7c-437f-88ab-9d48e0ddc695",
+  "roles": {
+    "zh": "单人创作",
+    "en": "Solo Project"
+  },
+  "category": "film",
+  "subgroup": "none"
+}
