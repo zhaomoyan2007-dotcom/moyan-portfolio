@@ -1,7 +1,8 @@
 {
   "homePhotos": [],
   "filmIntro": {
-    "zh": "基于静态影像创作积累的审美，以及学生时期个人项目的实践经验，我逐步形成了对摄影语言的理解，能够结合导演的创作意图，灵活安排机位与摄像机运动。正在持续学习专业剧组的工作流程。"
+    "zh": "基于静态影像创作积累的审美，以及学生时期个人项目的实践经验，我逐步形成了对摄影语言的理解，能够结合导演的创作意图，灵活安排机位与摄像机运动。正在持续学习专业剧组的工作流程。",
+    "en": "Drawing on the aesthetic sensibility developed through still photography and hands-on experience from personal projects as a student, I have developed an understanding of cinematographic language and can adapt camera placement and movement to the director’s creative vision. I continue to learn the workflows of professional film crews."
   },
   "name": "墨岩",
   "intro": {
@@ -63,8 +64,8 @@
       "en": "Current focus"
     },
     "contactNote": {
-      "zh": "具体参与职责与工作范围，可根据项目需求进一步沟通。",
-      "en": "Contributions and scope can be discussed to suit each project."
+      "zh": "",
+      "en": ""
     },
     "introBlocks": [
       {
@@ -145,7 +146,7 @@
         },
         "body": {
           "zh": "在部分学生剧组作业中承担摄影、剪辑与配乐选取等工作，参与从现场画面到成片节奏的组织。",
-          "en": "On I’m Not a Stray, I contributed cinematography, editing and music selection, working from on-set images to the rhythm of the finished film."
+          "en": "On student film projects, I have taken on cinematography, editing and music selection, helping shape the work from on-set images to the rhythm of the finished film."
         },
         "projectId": "1-1"
       },
@@ -156,13 +157,13 @@
         },
         "body": {
           "zh": "持续跟组学习，协助器材与现场信息传递，积累专业剧组的协作经验。",
-          "en": "On-set training on a Where Winds Meet collaboration TVC, assisting with equipment and production communication while learning professional workflows."
+          "en": "I continue to learn on set, assisting with equipment and communication while gaining experience working with professional film crews."
         },
         "projectId": "project-bc675b2f-0eaf-4cc4-a89a-6e3a92f782d1"
       }
     ],
     "cooperationLead": {
-      "zh": "摄影与短片，\n期待一起创作。",
+      "zh": "摄影与短片，\n一起学习，共同创作。",
       "en": "Photography & film.\nLet’s make something."
     },
     "plansHeading": {
