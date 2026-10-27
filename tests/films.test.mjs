@@ -63,3 +63,10 @@ test('film renderer keeps title, date, cover, stills and bilingual details in re
   assert.deepEqual(empty.children.map(e=>e.className),['film-project-heading','film-cover']);
  }finally{globalThis.document=previous;}
 });
+
+test('CMS exposes a bilingual introduction for the homepage film section',()=>{
+ const settings=cmsConfiguration({},true).config.collections.find(c=>c.name==='settings').files.find(f=>f.name==='site');
+ const field=settings.fields.find(f=>f.name==='filmIntro');
+ assert.deepEqual(field.fields.map(f=>f.name),['zh','en']);
+ assert.ok(field.fields.every(f=>f.required===false));
+});

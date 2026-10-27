@@ -12,6 +12,7 @@
   <link rel="preload" href="assets/fonts/Signature-Latin.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="films.css">
+  <link rel="stylesheet" href="about.css">
   <script type="module" src="app.js"></script>
   <script src="experience.js" defer></script>
   <script src="navigation.js" defer></script>
@@ -22,11 +23,12 @@
     <div class="header-inner">
       <a class="brand" href="#home" aria-label="MOYAN 墨岩"><span class="brand-latin" lang="en">MOYAN</span><span class="brand-han" lang="zh-CN">墨岩</span></a>
       <nav class="main-nav" aria-label="主导航">
-        <a href="#selected" data-i18n="navSelected">精选作品</a>
+        <a href="#photography" data-i18n="stillImages">静态影像</a>
+        <a href="#cinematography" data-i18n="filmCreation">短片创作</a>
         <button class="works-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="navigation-panel">
           <span data-i18n="navAll">全部作品</span><span class="chevron" aria-hidden="true"></span>
         </button>
-        <a href="#about" data-i18n="navAbout">关于</a>
+        <a href="#about" data-i18n="navAbout">关于我</a><a href="#collaborate" class="nav-collaborate" data-i18n="navCollaborate">与我合作</a>
       </nav>
       <div class="header-tools">
         <div class="language" role="group" aria-label="Language / 语言">
@@ -40,24 +42,24 @@
   <button class="menu-scrim" type="button" data-menu-close aria-label="关闭菜单 / Close menu" hidden></button>
   <nav id="navigation-panel" class="navigation-panel" aria-label="作品导航 / Project navigation" hidden>
     <div class="panel-inner">
-      <div class="panel-group">
-        <a class="panel-heading mobile-only" href="#selected" data-i18n="navSelected">精选作品</a>
-        <a class="panel-heading" href="#all/photography" data-i18n="art">艺术摄影创作</a>
-        <a href="#all/documentary" data-i18n="documentary">纪实</a>
-        <a href="#all/portrait" data-i18n="portrait">人像</a>
-        <a href="#all/contemporary" data-i18n="contemporary">当代创作</a>
-        <a href="#all/sports" data-i18n="sports">体育</a>
-        <a href="#all/aerial" data-i18n="aerial">航拍</a>
-        <a href="#all/nature" data-i18n="nature">自然风光</a>
+      <div class="menu-quick mobile-only"><a href="#photography" data-i18n="stillImages">静态影像</a><a href="#cinematography" data-i18n="filmCreation">短片创作</a><a href="#about" data-i18n="navAbout">关于我</a><a href="#collaborate" class="nav-collaborate" data-i18n="navCollaborate">与我合作</a></div>
+      <div class="panel-group panel-photography">
+        <p class="menu-number" aria-hidden="true">01 / PHOTOGRAPHY</p>
+        <a class="panel-heading" href="#all/photography" data-i18n="art">摄影作品</a>
+        <div class="panel-categories">
+          <a href="#all/documentary" data-i18n="documentary">纪实</a>
+          <a href="#all/contemporary" data-i18n="contemporary">当代与情绪</a>
+          <a href="#all/portrait" data-i18n="portrait">人像</a>
+          <a href="#all/sports" data-i18n="sports">体育</a>
+          <a href="#all/aerial" data-i18n="aerial">航拍</a>
+          <a href="#all/nature" data-i18n="nature">自然风光</a>
+        </div>
       </div>
-      <div class="panel-group">
-        <a class="panel-heading" href="#all/film" data-i18n="film">短片创作</a>
+      <div class="panel-group panel-films">
+        <p class="menu-number" aria-hidden="true">02 / SHORT FILMS</p>
+        <a class="panel-heading" href="#all/film" data-i18n="filmCreation">短片创作</a>
         <p data-i18n="filmMenuNote">按项目浏览影片与参与职责。</p>
-      </div>
-      <div class="panel-group">
-        <a class="panel-heading" href="#all" data-i18n="allProjects">全部作品</a>
-        <a href="#about" data-i18n="navAbout">关于</a>
-        <p class="panel-signature">PHOTOGRAPHY<br>&amp; CINEMATOGRAPHY</p>
+        <a class="menu-view" href="#all/film"><span data-i18n="viewAllProjects">浏览全部项目</span><span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </nav>
@@ -94,7 +96,7 @@
       <section id="cinematography" class="film-portfolio section-shell" aria-labelledby="film-heading" tabindex="-1">
         <div class="selection-heading">
           <p class="eyebrow">SHORT FILMS / CINEMATOGRAPHY</p>
-          <h2 id="film-heading" data-i18n="filmCreation">短片创作</h2>
+          <h2 id="film-heading" data-i18n="filmCreation">短片创作</h2><p id="film-introduction" class="film-introduction" hidden></p>
         </div>
         <div id="film-projects"></div>
         <p id="film-empty" class="film-empty" data-i18n="filmEmpty" hidden>短片作品整理中。</p>
@@ -113,12 +115,8 @@
       <p class="archive-empty" id="archive-empty" hidden data-i18n="categoryEmpty">这个分类尚未加入项目。后续将呈现你的正式作品。</p>
     </section>
     <footer id="about" class="site-footer section-shell" tabindex="-1">
-      <div class="footer-grid">
-        <div class="footer-about"><h2 data-i18n="footerTitle">关于墨岩</h2><p id="about-text">以图片摄影与电影摄影展开创作。<br>这里将补充个人简介与合作联系方式。</p></div>
-        <div><h3 data-i18n="art">艺术摄影创作</h3><a href="#all/documentary" data-i18n="documentary">纪实</a><a href="#all/portrait" data-i18n="portrait">人像</a><a href="#all/contemporary" data-i18n="contemporary">当代与情绪</a><a href="#all/sports" data-i18n="sports">体育</a><a href="#all/aerial" data-i18n="aerial">航拍</a><a href="#all/nature" data-i18n="nature">自然风光</a></div>
-        <div><h3 data-i18n="film">短片创作</h3><a href="#all/film" data-i18n="viewAllProjects">浏览全部项目</a><a href="#selected" data-i18n="navSelected">精选作品</a></div>
-        <div><h3 data-i18n="contactLabel">联系与合作</h3><div id="contact-content"></div><a href="#home" data-i18n="backTop">回到顶部</a></div>
-      </div>
+      <div id="about-content"></div>
+      <div class="about-utility"><a href="#home"><span data-i18n="backTop">回到顶部</span> ↑</a></div>
       <div class="footer-bottom"><span>墨岩 © 2026</span><span data-i18n="previewNote">本地风格预览 · 图像与文字含示意内容</span></div>
     </footer>
   </main>

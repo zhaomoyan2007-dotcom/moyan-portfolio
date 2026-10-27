@@ -27,11 +27,17 @@ async function start(){
     document.getElementById('mode-detail').textContent=runtime.mode==='local'?'本地模式只修改本机内容文件，不会上传到公网。保存后刷新网站查看结果。本地代理不支持线上草稿审核流程，保存修改会直接反映到本机页面。':'先保存草稿并预览，确认后再发布到主分支；选择“公开展示”的项目才进入作品目录。等待Vercel构建成功后网页才会更新。图片库可能要求另行登录Cloudinary。';
     const {projectIdControl}=await import('./project-id.mjs');
     window.CMS.registerWidget('project-id',projectIdControl(window.createClass,window.h));
+    const {aboutContent}=await import('../about.mjs');
+    // Published project metadata supplies the same evidence links as the public page.
+    let aboutProjects=[];
+    try{const response=await fetch('/content.json',{cache:'no-cache'});if(response.ok)aboutProjects=(await response.json()).projects||[];}catch{}
+
     const {filmPreview}=await import('./film-preview.mjs');
     const {photoPreview}=await import('./photo-preview.mjs');
     const {galleryLayout}=await import('../media.mjs');
     const Preview=window.createClass({render(){
       const data=this.props.entry.get('data').toJS();
+      if(data.name&&!data.category)return window.h('article',{className:'cms-about-preview'},...['zh','en'].map(language=>window.h('section',{key:language,lang:language==='zh'?'zh-CN':'en'},window.h('p',{className:'cms-film-language-label'},language==='zh'?'关于区域 · 中文预览':'ABOUT · ENGLISH PREVIEW'),aboutContent(window.h,data,language,aboutProjects,src=>String(this.props.getAsset(src))))));
       if(data.category==='film')return filmPreview(data,window.h,this.props.getAsset);
       if(['aerial','nature','sports'].includes(data.category))return photoPreview(data,window.h,this.props.getAsset,galleryLayout(data.category,data.subgroup));
       const title=data.title?.zh||data.name||'';
@@ -41,6 +47,7 @@ async function start(){
         window.h('h1',{},title),window.h('p',{},data.description?.zh||data.intro?.zh||data.about?.zh||''),
         ...images.map((src,i)=>window.h('img',{key:i,src:String(this.props.getAsset(src)),alt:`照片 ${i+1}`})));
     }});
+    window.CMS.registerPreviewStyle('/about.css');
     window.CMS.registerPreviewStyle('/admin/preview.css');
     window.CMS.registerPreviewTemplate('projects',Preview);window.CMS.registerPreviewTemplate('site',Preview);
     window.CMS.init({config});document.getElementById('setup').hidden=true;

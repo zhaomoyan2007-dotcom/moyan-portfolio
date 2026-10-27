@@ -1,3 +1,5 @@
+import { aboutContent } from './about.mjs';
+import { archiveFilterGroups } from './archive-filters.mjs';
 import { copy } from './copy.js';
 import { imageURL,galleryLayout,filmProjects,filmImages } from './media.mjs';
 import { createFilmProject,updateFilmLanguage } from './films.mjs';
@@ -41,7 +43,11 @@ function card(project){
 }
 function renderArchive(){
   const filters=byId('filters');filters.replaceChildren();
-  categories.forEach(category=>{const button=node('button','',t(category));button.type='button';button.dataset.filter=category;button.setAttribute('aria-pressed',String(filter===category));if(language==='zh')button.append(node('span','',copy.en[category].toUpperCase()));filters.append(button);});
+  filters.setAttribute('aria-label',language==='zh'?'作品分类':'Project categories');
+  archiveFilterGroups(filter).forEach((group,index)=>{
+    const row=node('div',index?'filter-children':'filter-parents');row.setAttribute('role','group');row.setAttribute('aria-label',index?(language==='zh'?'摄影分类':'Photography categories'):(language==='zh'?'作品类型':'Project type'));
+    group.forEach(category=>{const button=node('button','',t(category));button.type='button';button.dataset.filter=category;const active=filter===category||(category==='art'&&photoCategories.includes(filter));button.setAttribute('aria-pressed',String(active));if(language==='zh')button.append(node('span','',copy.en[category].toUpperCase()));row.append(button);});filters.append(row);
+  });
   const selected=data.projects.filter(p=>filter==='all'||(filter==='art'?p.category!=='film':p.category===filter));
   byId('archive-grid').replaceChildren(...selected.map(card));byId('archive-empty').hidden=selected.length>0;
 }
@@ -55,6 +61,8 @@ function renderHome(){
   document.querySelectorAll('[data-site-image]').forEach(img=>{if(['hero','selectedPreview'].includes(img.dataset.siteImage)){img.removeAttribute('width');img.removeAttribute('height');}const src=imageURL(site[img.dataset.siteImage],1800);if(img.getAttribute('src')!==src)img.src=src;img.removeAttribute('srcset');img.alt=language==='zh'?'墨岩的摄影作品':'Photography by 墨岩';});
   renderPhotoSections(site,projects);
   document.getElementById('selected-visual').classList.toggle('is-empty',!site.selectedPreview);
+  const filmIntroduction=byId('film-introduction');
+  filmIntroduction.textContent=localized(site.filmIntro);filmIntroduction.hidden=!filmIntroduction.textContent.trim();
   const films=filmProjects(projects);
   const filmRoot=byId('film-projects');
   const existingFilms=new Map([...filmRoot.children].map(element=>[element.dataset.filmId,element]));
@@ -64,10 +72,7 @@ function renderHome(){
     return createFilmProject({project,images:filmImages(project),language,t,makeImage:photograph});
   }));
   byId('film-empty').hidden=films.length>0;
-  byId('about-text').textContent=localized(site.about);
-  const contact=byId('contact-content');contact.replaceChildren();
-  if(site.contactEmail){const email=node('a','',site.contactEmail);email.href=`mailto:${site.contactEmail}`;contact.append(email);}
-  if(site.contactURL){const link=node('a','',localized(site.contactLabel)||t('contactLabel'));link.href=site.contactURL;link.target='_blank';link.rel='noopener noreferrer';contact.append(link);}
+  byId('about-content').replaceChildren(aboutContent((tag,props,...children)=>{const element=node(tag,props.className||'');Object.entries(props).forEach(([key,value])=>{if(key!=='className'&&value!=null)element.setAttribute(key,String(value));});children.flat().filter(child=>child!==null&&child!==undefined).forEach(child=>element.append(child));return element;},site,language,projects,src=>imageURL(src,900)));
 }
 function renderPhotoSections(site,projects){
   const positions=new Map([...document.querySelectorAll('[data-gallery]')].map(element=>[element.dataset.gallery,element.querySelector('.photo-track').scrollLeft]));
@@ -141,10 +146,16 @@ function route(){
     return;
   }
   if(dialog.open)dialog.close();activeProject=null;
+  // About belongs to both views; keep the current view to avoid image layout shifts during the scroll.
+  if(hash==='#about'||hash==='#collaborate'){
+    const target=byId(hash.slice(1))||byId('about');
+    requestAnimationFrame(()=>{target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});target.focus({preventScroll:true});});
+    returnHash=hash;return;
+  }
   const isArchive=hash==='#all'||hash.startsWith('#all/');
   const switched=home.hidden!==isArchive;home.hidden=isArchive;archive.hidden=!isArchive;
   if(isArchive){const category=hash.split('/')[1]||'all';filter=category==='photography'?'art':categories.includes(category)?category:'all';renderArchive();if(switched)window.scrollTo({top:0,behavior:'instant'});}
-  else {const target=hash==='#home'?document.querySelector('.hero'):document.getElementById(hash.slice(1));if(target)requestAnimationFrame(()=>{target.scrollIntoView({behavior:switched||matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});if(target.hasAttribute('tabindex'))target.focus({preventScroll:true});});}
+  else {const target=hash==='#home'?document.querySelector('.hero'):document.getElementById(hash.slice(1));if(target)requestAnimationFrame(()=>{target.scrollIntoView({behavior:(switched&&hash!=='#about')||matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});if(target.hasAttribute('tabindex'))target.focus({preventScroll:true});});}
   returnHash=hash;
 }
 document.addEventListener('click',event=>{

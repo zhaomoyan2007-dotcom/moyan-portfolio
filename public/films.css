@@ -1,6 +1,8 @@
 /* The film section reads as a continuous exhibition on the existing black surface. */
 .film-portfolio{padding-top:110px;padding-bottom:90px;scroll-margin-top:var(--header)}
 .film-portfolio>.selection-heading{margin-bottom:68px}
+.film-introduction{max-width:660px;margin:24px auto 0;color:#aaa;font-size:14px;line-height:2;letter-spacing:.04em;white-space:pre-line;text-wrap:pretty}
+html[lang=en] .film-introduction{letter-spacing:.015em}
 .film-project{max-width:1120px;margin:0 auto}
 .film-project+.film-project{margin-top:140px}
 .film-project-heading{text-align:center;margin:0 0 34px}
@@ -14,13 +16,13 @@
 .film-still{min-width:0;aspect-ratio:16/9;margin:0;overflow:hidden;background:#000}
 .film-details{max-width:760px;margin:46px auto 0;text-align:center}
 .film-detail+.film-detail{margin-top:30px}
-.film-detail p{margin:0;white-space:pre-line;font-family:inherit;font-size:12px;font-weight:300;line-height:2.1;letter-spacing:.17em;color:#888;text-wrap:pretty;overflow-wrap:anywhere}
+.film-detail p{margin:0;white-space:pre-line;font-family:inherit;font-size:14px;font-weight:300;line-height:2.1;letter-spacing:.17em;color:#b8b8b8;text-wrap:pretty;overflow-wrap:anywhere}
 .film-empty{text-align:center;font-size:13px;line-height:2;color:#888;letter-spacing:.08em;margin:0 0 45px}
 html[lang=en] .film-project-heading h3{letter-spacing:.04em}
 html[lang=en] .film-detail p{letter-spacing:.01em;line-height:1.95}
 
 @media(max-width:760px){
- .film-portfolio{padding-top:75px;padding-bottom:60px}.film-portfolio>.selection-heading{margin-bottom:46px}
+ .film-portfolio{padding-top:75px;padding-bottom:60px}.film-introduction{font-size:12px;line-height:2;margin-top:20px}.film-portfolio>.selection-heading{margin-bottom:46px}
  .film-project+.film-project{margin-top:90px}.film-project-heading{margin-bottom:24px}
  .film-project-heading h3{font-size:25px;letter-spacing:.07em}.film-date{font-size:10px;margin-top:10px}
  .film-stills{max-width:88%;gap:4px;margin-top:16px}.film-details{margin-top:30px}.film-detail+.film-detail{margin-top:24px}

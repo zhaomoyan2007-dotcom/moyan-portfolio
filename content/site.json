@@ -7,8 +7,8 @@
   },
   "selectedPreview": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792916144/moyan-web/f34c63a7-e7e2-495a-bade-ed3c6e4620c7.webp",
   "about": {
-    "zh": "以图片摄影与电影摄影展开创作。\n这里将补充个人简介与合作联系方式。",
-    "en": "Working across photography and cinematography.\nA biography and contact details will be added here."
+    "zh": "以摄影展开观察与表达。\n在静止的画面与流动的影像之间，探索日常、空间与情绪。",
+    "en": "Through photography, I observe and express.\nWorking across still images and short films, I explore everyday life, space and emotion."
   },
   "contactURL": "",
   "contactLabel": {
@@ -21,5 +21,172 @@
   "identity": {
     "zh": "摄影 · 短片创作",
     "en": "PHOTOGRAPHY · CINEMATOGRAPHY"
+  },
+  "aboutPage": {
+    "eyebrow": {
+      "zh": "ABOUT THE IMAGE MAKER",
+      "en": "ABOUT THE IMAGE MAKER"
+    },
+    "heading": {
+      "zh": "静态影像。\n电影摄影。",
+      "en": "Photography.\nCinematography."
+    },
+    "capabilitiesHeading": {
+      "zh": "创作方向与实践",
+      "en": "Practice, through projects"
+    },
+    "cooperationHeading": {
+      "zh": "与我合作",
+      "en": "Work with me"
+    },
+    "plansHeading": {
+      "zh": "远期目标",
+      "en": "Long-term goals"
+    },
+    "capabilities": [
+      {
+        "title": {
+          "zh": "静态摄影创作",
+          "en": "Photographic work"
+        },
+        "body": {
+          "zh": "围绕纪实、当代与情绪、人像等方向持续拍摄，以系列组织观察与表达。",
+          "en": "Ongoing work in documentary, contemporary photography and portraiture, developing observations into photographic series."
+        },
+        "projectId": "project-890f7f62-6669-4118-bfcd-ff0b7c2c2cec"
+      },
+      {
+        "title": {
+          "zh": "短片摄影与后期",
+          "en": "Cinematography & post-production"
+        },
+        "body": {
+          "zh": "在《我才不是流浪狗》中承担摄影、剪辑与配乐选取等工作，参与从现场画面到成片节奏的组织。",
+          "en": "On I’m Not a Stray, I contributed cinematography, editing and music selection, working from on-set images to the rhythm of the finished film."
+        },
+        "projectId": "1-1"
+      },
+      {
+        "title": {
+          "zh": "剧组现场 · 持续学习",
+          "en": "On set · learning in practice"
+        },
+        "body": {
+          "zh": "参与《燕云十六声》联名TVC跟组学习，协助器材与现场信息传递，积累专业剧组的协作经验。",
+          "en": "On-set training on a Where Winds Meet collaboration TVC, assisting with equipment and production communication while learning professional workflows."
+        },
+        "projectId": "project-bc675b2f-0eaf-4cc4-a89a-6e3a92f782d1"
+      }
+    ],
+    "cooperation": [
+      {
+        "title": {
+          "zh": "摄影创作 / 短片摄影",
+          "en": "Photography / Cinematography"
+        },
+        "body": {
+          "zh": "静态摄影项目、短片影像创作与摄影合作。",
+          "en": "Photographic projects, short-film image-making and cinematography."
+        }
+      },
+      {
+        "title": {
+          "zh": "剪辑 / 配乐选取",
+          "en": "Editing / Music selection"
+        },
+        "body": {
+          "zh": "短片剪辑、叙事节奏与配乐选取。",
+          "en": "Short-film editing, narrative rhythm and music selection."
+        }
+      },
+      {
+        "title": {
+          "zh": "摄影助理 / 现场协作",
+          "en": "Camera assistance / On-set support"
+        },
+        "body": {
+          "zh": "参与剧组现场工作，在明确职责的基础上协作与实践。",
+          "en": "Contributing to productions through clearly defined support roles and practical collaboration."
+        }
+      }
+    ],
+    "plans": [
+      {
+        "title": {
+          "zh": "向电影摄影持续深入",
+          "en": "Developing a cinematographic practice"
+        },
+        "body": {
+          "zh": "在专业学习、个人创作与剧组实践之间持续积累，逐步建立自己的电影摄影语言。",
+          "en": "Continuing to learn through study, personal projects and on-set practice, towards a cinematographic language of my own."
+        }
+      }
+    ],
+    "profileLine": {
+      "zh": "摄影创作者 / 北京电影学院 · 2026级本科在读",
+      "en": "Image maker / Photography undergraduate · Beijing Film Academy, 2026 intake"
+    },
+    "directionsHeading": {
+      "zh": "当前关注",
+      "en": "Current focus"
+    },
+    "directions": [
+      {
+        "title": {
+          "zh": "日常、空间与情绪",
+          "en": "Everyday life, space & emotion"
+        },
+        "body": {
+          "zh": "从纪实到当代摄影，在真实生活与空间中寻找情绪与叙事的线索。",
+          "en": "From documentary to contemporary photography, finding traces of emotion and narrative in everyday life and space."
+        }
+      },
+      {
+        "title": {
+          "zh": "画面、时间与叙事",
+          "en": "Image, time & narrative"
+        },
+        "body": {
+          "zh": "在短片创作中探索摄影、剪辑与配乐之间的关系，让影像组织故事与感受。",
+          "en": "Exploring the relationship between cinematography, editing and music in short films, shaping stories and feelings through images."
+        }
+      }
+    ],
+    "cooperationLead": {
+      "zh": "摄影与短片，\n期待一起创作。",
+      "en": "Photography & film.\nLet’s make something."
+    },
+    "contactNote": {
+      "zh": "具体参与职责与工作范围，可根据项目需求进一步沟通。",
+      "en": "Contributions and scope can be discussed to suit each project."
+    },
+    "introTitle": {
+      "zh": "关于我",
+      "en": "About me"
+    },
+    "introSubtitle": {
+      "zh": "ABOUT ME",
+      "en": "关于我"
+    },
+    "introBlocks": [
+      {
+        "text": {
+          "zh": "影像创作者 / 北京电影学院 · 2026级本科在读",
+          "en": "Image maker / Undergraduate, Beijing Film Academy · Class of 2026"
+        }
+      },
+      {
+        "text": {
+          "zh": "2026 吴晓隆深圳工作坊学员",
+          "en": "Participant, Wu Xiaolong Shenzhen Workshop · 2026"
+        }
+      },
+      {
+        "text": {
+          "zh": "",
+          "en": ""
+        }
+      }
+    ]
   }
 }

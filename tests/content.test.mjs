@@ -47,3 +47,9 @@ test('homepage introduction remains bilingual, accepts paragraphs and is optiona
   assert.deepEqual(publicContent({...site,intro},[]).site.intro,intro);
   assert.deepEqual(publicContent(site,[]).site.intro,{zh:'',en:''});
 });
+
+test('film section introduction is optional and preserves both languages and paragraph breaks',()=>{
+ const filmIntro={zh:'短片简介。\n\n第二段。',en:'Film introduction.\n\nSecond paragraph.'};
+ assert.deepEqual(publicContent({...site,filmIntro},[]).site.filmIntro,filmIntro);
+ assert.deepEqual(publicContent(site,[]).site.filmIntro,{zh:'',en:''});
+});

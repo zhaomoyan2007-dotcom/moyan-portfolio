@@ -1,0 +1,97 @@
+/* Editorial navigation: two disciplines, with photography nested beneath its heading. */
+.main-nav{gap:24px;margin-right:24px;white-space:nowrap}
+.panel-inner{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:80px;padding:40px 48px 48px}
+.panel-group{gap:0;min-width:0}
+.panel-group .menu-number{font-size:9px;letter-spacing:.2em;color:#777;margin-bottom:16px}
+.panel-group>.panel-heading{font-size:24px;letter-spacing:.09em;margin:0 0 26px}
+.panel-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 28px;width:100%}
+.panel-categories a{font-size:13px;line-height:1.8;color:#aaa;transition:color .2s}
+.panel-categories a:hover{color:white}
+.panel-films{border-left:1px solid #272727;padding-left:50px}
+.panel-films p:not(.menu-number){max-width:260px;font-size:12px;line-height:1.9}
+.panel-group .menu-view{margin-top:27px;display:inline-flex;align-items:center;gap:35px;font-size:11px;color:#ddd}
+.menu-quick{gap:24px;flex-wrap:wrap;border-bottom:1px solid #272727;padding-bottom:25px}
+.filters{display:block;margin:42px 0}
+.filter-parents,.filter-children{display:flex;flex-wrap:wrap;gap:20px 35px}
+.filter-parents{border-bottom:1px solid #272727;padding-bottom:18px}
+.filter-children{padding-top:22px}
+.filter-children button{font-size:12px}
+.filter-children button>span{font-size:9px}
+/* Creator profile: identity first, project evidence next, collaboration within the same black field. */
+.site-footer{background:#000;padding-top:100px;padding-bottom:30px;scroll-margin-top:0}
+.about-editorial{color:#f2f0ec;font-weight:400}
+.about-editorial h2,.about-editorial h3,.about-editorial h4{font-weight:400}
+.about-kicker,.about-section-label{font-size:12px;line-height:1.7;letter-spacing:.13em;color:#aaa}
+.about-intro{max-width:900px;padding:0 0 70px}
+.about-intro-title{font-size:clamp(34px,3.5vw,48px);line-height:1.4;letter-spacing:.1em;margin:0}
+.about-intro-subtitle{font-size:11px;line-height:1.8;letter-spacing:.22em;color:#939393;margin:14px 0 0}
+.about-intro-blocks{display:grid;gap:16px;margin-top:40px}
+.about-intro-text{font-size:18px;line-height:1.95;letter-spacing:.025em;color:#e2e2e2;font-weight:500;white-space:pre-line;overflow-wrap:anywhere;margin:0;text-wrap:pretty}
+.about-note h4{font-size:19px;line-height:1.6;letter-spacing:.015em;margin:0 0 12px}
+.about-note p,.about-practice-copy p{font-size:15px;line-height:2;color:#bfbfbf;white-space:pre-line;text-wrap:pretty}
+.about-section-title{font-size:30px;line-height:1.5;letter-spacing:.04em;margin-bottom:28px}
+.about-practice-row{display:grid;grid-template-columns:40px minmax(0,1fr) 235px;gap:30px;align-items:center;border-top:1px solid #333;padding:28px 0;min-height:190px}
+.about-index{font-size:12px;letter-spacing:.1em;color:#999;align-self:start;padding-top:8px}
+.about-practice-copy{max-width:630px}
+.about-practice-copy h4{font-size:24px;line-height:1.5;letter-spacing:.025em;margin:0 0 12px}
+.about-evidence{display:block;min-width:0}
+.about-evidence img{width:100%;height:135px;object-fit:cover;transition:opacity .25s}
+.about-evidence-caption{display:flex;align-items:baseline;justify-content:space-between;gap:15px;font-size:12px;line-height:1.8;margin-top:10px;color:#ccc}
+.about-link-arrow{font-size:19px;line-height:1;transition:transform .25s}
+.about-evidence:hover .about-link-arrow{transform:translate(2px,-2px)}
+.about-evidence:hover img{opacity:.8}
+.about-evidence:focus-visible{outline:1px solid white;outline-offset:7px}
+/* Perforated edges frame a dark film negative; the content stays quiet and readable. */
+.about-collaborate{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr 1fr;gap:8%;color:#f2f0ec;background:#080707;border:1px solid #282222;padding:70px 62px;margin-top:65px;scroll-margin-top:95px}
+.about-collaborate:before{content:"";position:absolute;inset:32px;border:1px solid #492427;pointer-events:none;z-index:-1}
+.about-collaborate:after{content:"";position:absolute;left:62px;top:32px;width:55px;height:2px;background:#a83b42;pointer-events:none}
+.film-perforation{position:absolute;pointer-events:none;opacity:.7;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='20'%3E%3Crect x='8' y='4' width='14' height='11' rx='2' fill='%23000' stroke='%23453b3b' stroke-width='.7'/%3E%3C/svg%3E")}
+.film-perforation-top,.film-perforation-bottom{left:32px;right:32px;height:20px;background-repeat:repeat-x;background-position:center}
+.film-perforation-top{top:6px}.film-perforation-bottom{bottom:6px}
+.film-perforation-left,.film-perforation-right{top:32px;bottom:32px;width:20px;background-repeat:repeat-y;background-position:center;background-size:24px 30px}
+.film-perforation-left{left:5px}.film-perforation-right{right:5px}
+.film-edge-mark{position:absolute;right:49px;bottom:26px;background:#080707;padding:0 10px;font-size:8px;line-height:14px;letter-spacing:.2em;color:#a96367}
+.about-major-title{font-size:clamp(28px,2.7vw,36px);line-height:1.55;letter-spacing:.025em;margin:0 0 25px}
+.about-cooperation-lead{font-size:24px;line-height:1.65;letter-spacing:.025em;white-space:pre-line;margin:0 0 22px;color:#d5d1d1;text-wrap:balance}
+.about-contact-note{font-size:14px;line-height:1.95;color:#bfbfbf;max-width:370px}
+.about-cooperation-notes{display:grid;gap:24px;align-content:start;padding-top:5px}
+.about-cooperation-notes .about-note+.about-note{border-top:1px solid #333;padding-top:22px}
+.about-collaborate .about-note h4{font-size:18px;margin-bottom:7px}
+.about-collaborate .about-note p{color:#bfbfbf;font-size:14px;line-height:1.95}
+.about-contact-actions{display:grid;gap:14px;margin-top:30px}
+.about-contact-action{display:flex;align-items:center;justify-content:space-between;gap:20px;width:fit-content;max-width:100%;overflow-wrap:anywhere;line-height:1.7;padding:10px 0 7px;border-bottom:1px solid #555;font-size:15px;color:#eee}
+.about-contact-action:focus-visible{outline:2px solid #eee;outline-offset:5px}
+.about-contact-action:hover{border-bottom-color:#eee}
+.about-future{display:grid;grid-template-columns:1fr 2fr;gap:45px;border-top:1px solid #333;margin-top:65px;padding-top:27px}
+.about-future .about-note h4{font-size:20px;margin-bottom:10px}
+.about-future .about-note p{max-width:750px;font-size:14px;color:#aaa}
+.about-future-notes{display:grid;gap:25px}
+.about-utility{margin-top:45px;display:flex;justify-content:flex-end;font-size:12px;color:#bbb}
+.site-footer .footer-bottom{font-size:10px;margin-top:30px}
+@media(max-width:1000px){
+ .main-nav{gap:20px;margin-right:12px}.main-nav a,.works-toggle{font-size:11px;letter-spacing:.07em}.header-inner{gap:20px}
+ .about-future{grid-template-columns:220px minmax(0,1fr);gap:30px}.about-practice-row{grid-template-columns:30px minmax(0,1fr) 190px;gap:20px}.about-evidence img{height:115px}.about-collaborate{gap:35px;padding:62px 48px}
+}
+@media(max-width:760px){
+ .panel-inner{display:grid;grid-template-columns:1fr;gap:30px;padding:30px 26px 38px}.menu-quick.mobile-only{display:flex!important}
+ .panel-group>.panel-heading{font-size:22px;margin-bottom:20px}.panel-categories{gap:17px 20px}.panel-categories a{font-size:12px}
+ .panel-films{border-left:0;border-top:1px solid #272727;padding:26px 0 0}.panel-group .menu-view{margin-top:20px}
+ .filter-parents,.filter-children{gap:18px 24px}.filters{margin:30px 0}.filter-children button{font-size:11px}.filter-children button>span{font-size:8px}
+ .site-footer{padding-top:55px}.about-intro{padding-bottom:40px}.about-intro-title{font-size:32px}.about-intro-subtitle{font-size:10px;margin-top:10px}.about-intro-blocks{gap:15px;margin-top:28px}.about-intro-text{font-size:15px;line-height:1.95}
+ 
+ .about-section-label{font-size:11px}.about-note h4{font-size:19px;margin-bottom:9px}.about-note p,.about-practice-copy p{font-size:14px;line-height:1.95}
+ .about-section-title{font-size:25px;margin-bottom:22px}.about-practice-row{grid-template-columns:23px minmax(0,1fr);gap:0 15px;padding:24px 0;min-height:0}.about-index{font-size:10px;padding-top:6px}.about-practice-copy h4{font-size:21px;margin-bottom:10px}
+ .about-evidence{grid-column:2;width:100%;margin-top:20px}.about-evidence img{height:auto;aspect-ratio:16/9}.about-evidence-caption{font-size:12px;margin-top:9px}
+ .about-collaborate{grid-template-columns:1fr;gap:30px;padding:48px 34px;margin:38px 0 0;scroll-margin-top:80px}.about-collaborate:before{inset:23px 19px}.about-collaborate:after{left:34px;top:23px;width:35px}.film-perforation-top,.film-perforation-bottom{left:20px;right:20px;height:17px;background-size:24px 17px}.film-perforation-top{top:3px}.film-perforation-bottom{bottom:3px}.film-perforation-left,.film-perforation-right{top:23px;bottom:23px;width:14px;background-size:18px 26px}.film-perforation-left{left:2px}.film-perforation-right{right:2px}.film-edge-mark{right:29px;bottom:17px;font-size:7px;padding:0 5px}.about-major-title{font-size:30px;margin-bottom:20px}.about-cooperation-lead{font-size:21px;line-height:1.6;margin-bottom:20px}.about-contact-note{font-size:13px}.about-cooperation-notes{gap:22px}.about-collaborate .about-note h4{font-size:17px}.about-collaborate .about-note p{font-size:13px}
+
+ .about-future{grid-template-columns:1fr;gap:22px;margin-top:38px;padding-top:24px}.about-future .about-note h4{font-size:19px}.about-future .about-note p{font-size:13px}.about-utility{margin-top:30px;font-size:11px}
+ .site-footer .footer-bottom{font-size:9px;margin-top:26px;line-height:1.9}
+}
+@media(prefers-reduced-motion:reduce){.about-evidence img,.about-link-arrow{transition:none}}
+
+/* The red invitation is a small typographic accent, not a second navigation panel. */
+.main-nav .nav-collaborate,.menu-quick .nav-collaborate{position:relative;color:#d16a70;font-family:"Kaiti SC",STKaiti,KaiTi,"Songti SC",serif;font-size:15px;font-weight:600;letter-spacing:.08em;padding:7px 0}
+.nav-collaborate:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,#a54b52 0 4px,transparent 4px 8px);opacity:.55;transition:opacity .2s}
+.main-nav .nav-collaborate:hover,.menu-quick .nav-collaborate:hover{opacity:1;color:#ed8b90}.nav-collaborate:hover:after{opacity:1}
+.nav-collaborate:focus-visible{outline:1px solid #d16a70;outline-offset:6px}
+@media(min-width:761px) and (max-width:1120px){.main-nav{gap:16px;margin-right:8px}.header-inner{gap:18px;padding-left:30px;padding-right:30px}.main-nav a,.works-toggle{font-size:11px;letter-spacing:.05em}.main-nav .nav-collaborate{font-size:14px}}
