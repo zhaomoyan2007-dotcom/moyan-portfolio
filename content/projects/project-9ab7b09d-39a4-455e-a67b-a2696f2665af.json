@@ -1,0 +1,25 @@
+{
+  "featured": true,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063042/moyan-web/6c51f9f7-bc59-4a7c-b3a1-43d3b6f1e58e.webp",
+  "title": {
+    "zh": "环境人像精选",
+    "en": "environmental potrait"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063091/moyan-web/5f45de67-7cf7-4498-98ef-17f6b1cc3dca.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063068/moyan-web/f71eefee-bd89-4944-894b-1aa50b99ee26.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063075/moyan-web/4d513f62-21f4-429d-a7f1-561ac7bdc2b0.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063065/moyan-web/b3bd916b-4687-451b-93b3-7ecb4aad1437.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063084/moyan-web/abb995d3-b1e7-452f-b75f-70e638dce47a.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063061/moyan-web/f37ff01c-5d54-47a0-8196-f91318839091.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063072/moyan-web/83173880-4048-47da-b4e5-bf2770694ad8.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063079/moyan-web/ed9d8e7f-e89d-4e5f-b92a-8ac8e4721642.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063087/moyan-web/a6bcb12f-b124-4fa9-8fcb-c844f3dff2d4.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063094/moyan-web/17369168-c059-4a06-a81d-35cb2736291c.webp"
+  ],
+  "id": "project-9ab7b09d-39a4-455e-a67b-a2696f2665af",
+  "category": "portrait",
+  "subgroup": "environment"
+}
