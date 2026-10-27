@@ -1,5 +1,8 @@
 {
   "homePhotos": [],
+  "filmIntro": {
+    "zh": "基于静态影像创作积累的审美，以及学生时期个人项目的实践经验，我逐步形成了对摄影语言的理解，能够结合导演的创作意图，灵活安排机位与摄像机运动。正在持续学习专业剧组的工作流程。"
+  },
   "name": "墨岩",
   "intro": {
     "zh": "我是墨岩，北京电影学院摄影专业2026级本科应届生，专注于静态影像与短片创作。\n\n在静止的画面与流动的影像之间，我以摄影展开观察与表达。以下是我的部分摄影创作与短片项目。",
@@ -18,102 +21,27 @@
   "schemaVersion": 1,
   "hero": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1792916105/moyan-web/c0aa7862-8910-4c89-9459-6bee3280138a.webp",
   "contactEmail": "",
-  "identity": {
-    "zh": "摄影 · 短片创作",
-    "en": "PHOTOGRAPHY · CINEMATOGRAPHY"
-  },
   "aboutPage": {
-    "eyebrow": {
-      "zh": "ABOUT THE IMAGE MAKER",
-      "en": "ABOUT THE IMAGE MAKER"
-    },
     "heading": {
       "zh": "静态影像。\n电影摄影。",
       "en": "Photography.\nCinematography."
     },
-    "capabilitiesHeading": {
-      "zh": "创作方向与实践",
-      "en": "Practice, through projects"
+    "introSubtitle": {
+      "zh": "ABOUT ME",
+      "en": "关于我"
     },
     "cooperationHeading": {
       "zh": "与我合作",
       "en": "Work with me"
     },
-    "plansHeading": {
-      "zh": "远期目标",
-      "en": "Long-term goals"
+    "eyebrow": {
+      "zh": "ABOUT THE IMAGE MAKER",
+      "en": "ABOUT THE IMAGE MAKER"
     },
-    "capabilities": [
-      {
-        "title": {
-          "zh": "静态摄影创作",
-          "en": "Photographic work"
-        },
-        "body": {
-          "zh": "围绕纪实、当代与情绪、人像等方向持续拍摄，以系列组织观察与表达。",
-          "en": "Ongoing work in documentary, contemporary photography and portraiture, developing observations into photographic series."
-        },
-        "projectId": "project-890f7f62-6669-4118-bfcd-ff0b7c2c2cec"
-      },
-      {
-        "title": {
-          "zh": "短片摄影与后期",
-          "en": "Cinematography & post-production"
-        },
-        "body": {
-          "zh": "在《我才不是流浪狗》中承担摄影、剪辑与配乐选取等工作，参与从现场画面到成片节奏的组织。",
-          "en": "On I’m Not a Stray, I contributed cinematography, editing and music selection, working from on-set images to the rhythm of the finished film."
-        },
-        "projectId": "1-1"
-      },
-      {
-        "title": {
-          "zh": "剧组现场 · 持续学习",
-          "en": "On set · learning in practice"
-        },
-        "body": {
-          "zh": "参与《燕云十六声》联名TVC跟组学习，协助器材与现场信息传递，积累专业剧组的协作经验。",
-          "en": "On-set training on a Where Winds Meet collaboration TVC, assisting with equipment and production communication while learning professional workflows."
-        },
-        "projectId": "project-bc675b2f-0eaf-4cc4-a89a-6e3a92f782d1"
-      }
-    ],
-    "cooperation": [
-      {
-        "title": {
-          "zh": "摄影创作 / 短片摄影",
-          "en": "Photography / Cinematography"
-        },
-        "body": {
-          "zh": "静态摄影项目、短片影像创作与摄影合作。",
-          "en": "Photographic projects, short-film image-making and cinematography."
-        }
-      },
-      {
-        "title": {
-          "zh": "剪辑 / 配乐选取",
-          "en": "Editing / Music selection"
-        },
-        "body": {
-          "zh": "短片剪辑、叙事节奏与配乐选取。",
-          "en": "Short-film editing, narrative rhythm and music selection."
-        }
-      },
-      {
-        "title": {
-          "zh": "摄影助理 / 现场协作",
-          "en": "Camera assistance / On-set support"
-        },
-        "body": {
-          "zh": "参与剧组现场工作，在明确职责的基础上协作与实践。",
-          "en": "Contributing to productions through clearly defined support roles and practical collaboration."
-        }
-      }
-    ],
     "plans": [
       {
         "title": {
-          "zh": "向电影摄影持续深入",
+          "zh": "向电影制作持续深入",
           "en": "Developing a cinematographic practice"
         },
         "body": {
@@ -122,14 +50,60 @@
         }
       }
     ],
-    "profileLine": {
-      "zh": "摄影创作者 / 北京电影学院 · 2026级本科在读",
-      "en": "Image maker / Photography undergraduate · Beijing Film Academy, 2026 intake"
+    "capabilitiesHeading": {
+      "zh": "创作方向与实践",
+      "en": "Practice, through projects"
+    },
+    "introTitle": {
+      "zh": "关于我",
+      "en": "About me"
     },
     "directionsHeading": {
       "zh": "当前关注",
       "en": "Current focus"
     },
+    "contactNote": {
+      "zh": "具体参与职责与工作范围，可根据项目需求进一步沟通。",
+      "en": "Contributions and scope can be discussed to suit each project."
+    },
+    "introBlocks": [
+      {
+        "text": {
+          "zh": "影像创作者 / 北京清华附中分校摄影社创始人兼社长 / 北京电影学院 · 2026级摄影专业本科在读",
+          "en": "Image maker / Undergraduate, Beijing Film Academy · Class of 2026"
+        }
+      },
+      {
+        "text": {
+          "zh": "拥有多年静态影像创作经验，熟悉多种数码摄影设备及中画幅胶片摄影工艺，目前开展当代摄影与环境人像创作，并学习棚拍流程。\n",
+          "en": "I have several years of experience in still photography and am proficient with a range of digital cameras and medium-format film photography techniques. My current practice focuses on contemporary photography and environmental portraiture, alongside learning studio photography workflows."
+        }
+      },
+      {
+        "text": {
+          "zh": "熟练掌握 Final Cut Pro，可独立完成短片剪辑，正在学习 DaVinci Resolve。善于结合导演的创作意图与影片节奏选取配乐，增强情绪与艺术表现力。",
+          "en": "Proficient in Final Cut Pro, I can independently edit short films and am currently learning DaVinci Resolve. I select music to support the director’s creative vision and the film’s rhythm, strengthening its emotional and artistic impact."
+        }
+      },
+      {
+        "text": {
+          "zh": "更关注 AI 对传统影视流程的辅助，而非直接生成虚构影像；熟练运用 ChatGPT 辅助剧本拆解、分镜整理与制作流程表格，提高创作效率。",
+          "en": "I focus on using AI to support traditional filmmaking workflows rather than generate fabricated imagery. I use ChatGPT to assist with script breakdowns, shot planning and production documentation, improving creative efficiency."
+        }
+      },
+      {
+        "text": {
+          "zh": "MBTI为ENFJ，重视计划，擅长表达与现场沟通协调，可参与剧组管理、计划安排及信息传递。目前持续跟组学习，将影像感知与沟通能力转化为实际创作贡献；希望通过学习与实践，承担摄影助理、跟焦、灯光助理、录音助理及副导演相关工作。",
+          "en": "As an ENFJ, I value planning, clear communication and on-set coordination, and can contribute to production organisation, scheduling and information flow. Through ongoing on-set learning, I am translating my visual awareness and communication skills into practical contributions. I hope to develop towards roles in camera assistance, focus pulling, lighting assistance, sound assistance and assistant directing."
+        }
+      },
+      {
+        "text": {
+          "zh": "具备剧本创作能力，目前持续进行剧本写作。",
+          "en": "I also have screenwriting experience and continue to develop original scripts."
+        }
+      }
+    ],
     "directions": [
       {
         "title": {
@@ -152,41 +126,88 @@
         }
       }
     ],
+    "capabilities": [
+      {
+        "title": {
+          "zh": "静态摄影创作",
+          "en": "Photographic work"
+        },
+        "body": {
+          "zh": "围绕纪实、当代与情绪、人像等方向持续拍摄，以系列组织观察与表达。",
+          "en": "Ongoing work in documentary, contemporary photography and portraiture, developing observations into photographic series."
+        },
+        "projectId": "project-890f7f62-6669-4118-bfcd-ff0b7c2c2cec"
+      },
+      {
+        "title": {
+          "zh": "短片摄影与后期",
+          "en": "Cinematography & post-production"
+        },
+        "body": {
+          "zh": "在部分学生剧组作业中承担摄影、剪辑与配乐选取等工作，参与从现场画面到成片节奏的组织。",
+          "en": "On I’m Not a Stray, I contributed cinematography, editing and music selection, working from on-set images to the rhythm of the finished film."
+        },
+        "projectId": "1-1"
+      },
+      {
+        "title": {
+          "zh": "剧组现场 · 持续学习",
+          "en": "On set · learning in practice"
+        },
+        "body": {
+          "zh": "持续跟组学习，协助器材与现场信息传递，积累专业剧组的协作经验。",
+          "en": "On-set training on a Where Winds Meet collaboration TVC, assisting with equipment and production communication while learning professional workflows."
+        },
+        "projectId": "project-bc675b2f-0eaf-4cc4-a89a-6e3a92f782d1"
+      }
+    ],
     "cooperationLead": {
       "zh": "摄影与短片，\n期待一起创作。",
       "en": "Photography & film.\nLet’s make something."
     },
-    "contactNote": {
-      "zh": "具体参与职责与工作范围，可根据项目需求进一步沟通。",
-      "en": "Contributions and scope can be discussed to suit each project."
+    "plansHeading": {
+      "zh": "远期目标",
+      "en": "Long-term goals"
     },
-    "introTitle": {
-      "zh": "关于我",
-      "en": "About me"
-    },
-    "introSubtitle": {
-      "zh": "ABOUT ME",
-      "en": "关于我"
-    },
-    "introBlocks": [
+    "cooperation": [
       {
-        "text": {
-          "zh": "影像创作者 / 北京电影学院 · 2026级本科在读",
-          "en": "Image maker / Undergraduate, Beijing Film Academy · Class of 2026"
+        "title": {
+          "zh": "静态影像拍摄",
+          "en": "Photography"
+        },
+        "body": {
+          "zh": "环境人像摄影、氛围感胶片人像、环境人像与棚拍人像",
+          "en": "Photographic projects, short-film image-making and cinematography."
         }
       },
       {
-        "text": {
-          "zh": "2026 吴晓隆深圳工作坊学员",
-          "en": "Participant, Wu Xiaolong Shenzhen Workshop · 2026"
+        "title": {
+          "zh": "影视后期",
+          "en": "Editing / Music selection"
+        },
+        "body": {
+          "zh": "短片剪辑、叙事节奏与配乐选取。",
+          "en": "Short-film editing, narrative rhythm and music selection."
         }
       },
       {
-        "text": {
-          "zh": "",
-          "en": ""
+        "title": {
+          "zh": "摄影助理 / 灯光助理 / 焦点 /  现场协助",
+          "en": "Camera assistance / On-set support"
+        },
+        "body": {
+          "zh": "参与剧组现场工作，在明确职责的基础上协作与实践。",
+          "en": "Contributing to productions through clearly defined support roles and practical collaboration."
         }
       }
-    ]
+    ],
+    "profileLine": {
+      "zh": "摄影创作者 / 北京电影学院 · 2026级本科在读",
+      "en": "Image maker / Photography undergraduate · Beijing Film Academy, 2026 intake"
+    }
+  },
+  "identity": {
+    "zh": "摄影 · 短片创作",
+    "en": "PHOTOGRAPHY · CINEMATOGRAPHY"
   }
 }
