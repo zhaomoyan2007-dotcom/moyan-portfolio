@@ -1,0 +1,23 @@
+{
+  "featured": true,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063636/moyan-web/e42f9b8a-522e-45aa-a26e-f7fcc416ad19.webp",
+  "title": {
+    "zh": "航拍",
+    "en": "aerial photograph"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063673/moyan-web/61320358-18b5-42c5-a5e1-440d6f49cea0.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063651/moyan-web/338cbd7c-1788-4fe9-8fa8-a32a41f564e7.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063655/moyan-web/d6035323-7073-43ea-b307-e0729dda89b0.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063663/moyan-web/c23fd26d-3be7-4b39-8d10-e17d77812aaf.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063666/moyan-web/7e3601d3-4d03-4162-818a-c338f15de219.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063676/moyan-web/65aba191-f6a8-4a06-bcbd-ae66f717df03.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063670/moyan-web/77c293b2-5c04-4e77-8995-d45b1acbd2df.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063659/moyan-web/021f1a05-453b-4788-b13d-c6e8c708f434.webp"
+  ],
+  "id": "project-9f3f0e41-cb35-4d86-ac6e-854f54cc4aff",
+  "category": "aerial",
+  "subgroup": "none"
+}
