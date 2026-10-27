@@ -1,0 +1,21 @@
+{
+  "featured": true,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063280/moyan-web/fd523ba8-7e01-4741-b34f-23ba92e158b7.webp",
+  "title": {
+    "zh": "棚拍人像",
+    "en": "studio potrait"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063307/moyan-web/84f9fe54-f2cc-472e-ac8b-355c9ca54287.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063301/moyan-web/186beee6-5d8e-4662-ba86-9908f5606c1f.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063298/moyan-web/ff55044c-31be-4e3d-a65c-b614cfc45c06.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063304/moyan-web/d9303a0f-12b9-45a6-a1ae-5232d310d250.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063310/moyan-web/c181c5b2-3d19-45bf-b30a-8f77b2dc8ceb.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793063295/moyan-web/bb2553db-8492-4119-a513-d635e794e3ad.webp"
+  ],
+  "id": "project-0372b413-4a0e-4224-b686-52e50b704ab8",
+  "category": "portrait",
+  "subgroup": "studio"
+}
