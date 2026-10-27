@@ -3,7 +3,15 @@
 @font-face{font-family:SignatureLatin;src:url('/assets/fonts/Signature-Latin.ttf') format('truetype');font-weight:400;font-display:swap}
 body{margin:0;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}.cms-preview{padding:30px}.cms-preview h1{font-size:26px;font-weight:400}.cms-preview p{font-size:14px;line-height:1.9;white-space:pre-line}.cms-preview img{display:block;max-width:100%;height:auto;margin:25px auto}
 
-.cms-film-preview{text-align:center}.cms-film-language+.cms-film-language{margin-top:70px}.cms-film-language-label{font-size:10px!important;color:#888;letter-spacing:.14em}.cms-film-date{color:#aaa;letter-spacing:.12em}.cms-film-cover{width:100%;max-width:960px!important}.cms-film-stills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;margin:16px 0 30px}.cms-film-stills img{width:100%;height:auto;margin:0}.cms-film-preview h2{font-size:12px;font-weight:400;color:#999;margin-top:26px}.cms-film-preview p{overflow-wrap:anywhere}
+.cms-film-preview{padding:30px;font-family:Outfit,"PingFang SC",sans-serif;font-weight:300}
+.cms-film-language+.cms-film-language{margin-top:70px;padding-top:35px;border-top:1px solid #333}
+.cms-film-language-label{font-size:10px!important;color:#888;letter-spacing:.14em}
+.cms-film-preview figure{margin:0}.cms-film-preview .film-cover img{margin:0}
+.cms-film-preview .film-stills{margin:24px auto 0}.cms-film-preview .film-still img{margin:0}
+.cms-film-preview .film-project-heading h3{margin:0;font-weight:300}
+.cms-film-preview .film-detail p{font-size:14px;font-weight:300;line-height:2.1;letter-spacing:.17em;color:#b8b8b8}
+.cms-film-preview [lang=en] .film-detail p{letter-spacing:.01em;line-height:1.95}
+@media(max-width:760px){.cms-film-preview .film-detail p{font-size:11px}}
 
 .cms-photo-track img{margin:0;background:transparent;border:0;box-shadow:none}
 .cms-photo-grid .cms-photo-track{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
@@ -16,3 +24,15 @@ body{margin:0;background:#000;color:#fff;font-family:-apple-system,BlinkMacSyste
 .cms-about-preview{padding:28px;font-weight:300;font-family:Outfit,"PingFang SC",sans-serif}.cms-about-preview *{box-sizing:border-box}.cms-about-preview h2,.cms-about-preview h3,.cms-about-preview p{margin-top:0;font-weight:300}.cms-about-preview a{color:inherit;text-decoration:none}.cms-about-preview>section+section{margin-top:70px;padding-top:35px;border-top:1px solid #333}.cms-about-preview .cms-film-language-label{margin-bottom:35px}.cms-about-preview .about-practice-row{grid-template-columns:30px minmax(0,1fr)}.cms-about-preview .about-evidence{grid-column:2}.cms-about-preview .about-collaborate{grid-template-columns:1fr;padding:68px 26px 65px;gap:30px}.cms-about-preview .about-future{grid-template-columns:1fr;gap:20px}
 
 .cms-about-preview p.about-intro-text{font-weight:500}.cms-about-preview .about-major-title{font-weight:400}
+
+.cms-site-preview{--header:0px;--sans:Outfit,"PingFang SC",sans-serif}
+.cms-site-preview img{display:block;max-width:100%;height:auto}
+.cms-site-preview h1{font-size:36px;font-weight:400;margin:22px 0}
+.cms-preview-navigation{display:flex;flex-wrap:wrap;gap:10px 20px;padding:0 0 18px;border-bottom:1px solid #333}
+.cms-preview-navigation button{padding:6px 0;border:0;border-bottom:1px solid transparent;background:none;color:#ccc;font:inherit;font-size:12px;cursor:pointer}.cms-preview-navigation button:hover{color:#fff;border-bottom-color:#999}.cms-preview-navigation button:focus-visible{outline:1px solid #ddd;outline-offset:4px}
+.cms-site-language{padding-top:30px}.cms-site-language+.cms-site-language{border-top:1px solid #333;margin-top:70px}
+.cms-site-section{margin:0 0 54px;scroll-margin-top:20px}
+.cms-site-section>h2{font-size:22px;font-weight:400;margin:0 0 20px}
+.cms-site-section>p{color:#ccc;font-size:14px;line-height:1.9;white-space:pre-line}
+.cms-site-preview .cms-site-language .cms-site-section .about-intro-text{font-weight:500}
+.cms-site-preview strong{font-weight:700}

@@ -32,7 +32,6 @@ export async function build({local=false,env=process.env}={}) {
   await writeFile(join(output,'content.json'),JSON.stringify({...data,build:{time:new Date().toISOString(),revision:env.VERCEL_GIT_COMMIT_SHA||'local'}},null,2));
   await writeFile(join(output,'admin/config.json'),JSON.stringify(config,null,2));
   await writeFile(join(output,'admin/runtime.json'),JSON.stringify({mode:local?'local':configured?'github':'unconfigured',cloudinary:!!config.media_library}));
-  await cp(join(root,'lib/content.mjs'),join(output,'media.mjs'));
   return {projects:data.projects.length,photos:data.site.homePhotos.length,mode:local?'local':configured?'github':'unconfigured'};
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)) {

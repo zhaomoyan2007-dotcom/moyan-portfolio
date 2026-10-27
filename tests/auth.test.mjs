@@ -25,3 +25,11 @@ test('OAuth callback escapes scripts and only sends credentials to the configure
   assert.match(html, /event.origin/);
   assert.equal(html.includes('postMessage(message, "*")'), false);
 });
+
+import {authConfig} from '../lib/oauth.mjs';
+test('public portfolio OAuth defaults to public_repo and only grants repo when explicitly configured',()=>{
+ const env={SITE_URL:'https://example.com',GITHUB_CLIENT_ID:'test',GITHUB_CLIENT_SECRET:'test',OAUTH_STATE_SECRET:secret,GITHUB_OWNER:'owner'};
+ assert.equal(authConfig(env).scope,'public_repo');
+ assert.equal(authConfig({...env,GITHUB_OAUTH_SCOPE:'public_repo'}).scope,'public_repo');
+ assert.equal(authConfig({...env,GITHUB_OAUTH_SCOPE:'repo'}).scope,'repo');
+});

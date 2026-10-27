@@ -1,3 +1,14 @@
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;background:#f6f7f9;color:#17202a} .setup{max-width:600px;margin:10vh auto;padding:36px} .setup a{color:inherit;font-size:13px}.eyebrow{font-size:11px;letter-spacing:.2em;color:#777;margin-top:70px} .setup h1{font-weight:400;font-size:36px} .setup p,.setup li{line-height:1.9;font-size:15px} .setup button{padding:12px 22px;border:1px solid #222;background:#111;color:#fff;cursor:pointer} #mode-note{position:fixed;right:18px;bottom:16px;z-index:9999;background:#111;color:#eee;border-radius:4px;padding:12px 16px;max-width:min(430px,75vw);box-shadow:0 4px 24px #0002;font-size:12px} #mode-note p{line-height:1.8} #mode-note a{color:#fff} #mode-note summary{cursor:pointer}
 .local-media{width:min(1000px,90vw);height:80vh;border:0;border-radius:6px;padding:26px;background:#f6f7f9;color:#17202a;overflow:auto}.local-media::backdrop{background:#0009}.local-media h2{font-size:22px}.local-media p{font-size:13px;line-height:1.8}.local-media-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.local-media-controls button{padding:10px 18px;cursor:pointer}.local-media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:14px;margin-top:22px}.local-media-grid button{padding:4px;border:2px solid transparent;background:white;cursor:pointer}.local-media-grid button[aria-pressed=true]{border-color:#1673aa}.local-media-grid img{width:100%;height:150px;object-fit:contain}
 .cloud-media{max-width:900px}.cloud-media>p:first-child{font-size:11px;letter-spacing:.18em;color:#777}.cloud-media h2{font-weight:500;font-size:30px}.cloud-upload-label{display:flex;flex-direction:column;gap:10px;padding:14px;background:#141414;color:white;border-radius:4px;font-size:13px}.cloud-upload-label input{max-width:240px}.cloud-upload-row{border-top:1px solid #ddd;padding:18px 0}.cloud-upload-row strong{font-size:14px;overflow-wrap:anywhere}.cloud-upload-row button{padding:8px 14px}.cloud-upload-list{margin-top:26px}
+
+/* Decap 3.17.1 provides field aria-labels and name-based IDs. Keep values mounted:
+   hiding a non-applicable control must never clear saved data or bypass validation.
+   Browsers without :has retain the complete, explicitly labelled form. */
+@supports selector(body:has(div)) {
+ body:has([data-project-category]):not(:has([data-project-category="portrait"])) [aria-label="select field"]:has([id^="subgroup-field-"]),
+ body:has([data-project-category="film"]) [aria-label="boolean field"]:has([id^="featured-field-"]),
+ body:has([data-project-category="film"]) [aria-label="string field"]:has(input[id^="year-field-"][value=""]),
+ body:has([data-project-category]):not(:has([data-project-category="film"])) [aria-label="string field"]:has([id^="projectDate-field-"]),
+ body:has([data-project-category]):not(:has([data-project-category="film"])) [aria-label="object field"]:has([id^="roles-field-"]){display:none}
+}
