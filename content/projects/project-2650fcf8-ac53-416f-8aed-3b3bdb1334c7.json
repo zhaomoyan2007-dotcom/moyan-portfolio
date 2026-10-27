@@ -1,0 +1,34 @@
+{
+  "projectDate": "2026-09",
+  "concept": {
+    "zh": "在北京电影学院举办的纪念长征胜利90周年 ai 影像创作小组中负责剪辑和音乐选取。",
+    "en": "Responsible for editing and music for an AI filmmaking project organised by Beijing Film Academy to commemorate the 90th anniversary of the completion of the Long March."
+  },
+  "featured": false,
+  "order": 0,
+  "status": "published",
+  "cover": "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070208/moyan-web/a5afbf7f-a1b8-4f79-872f-460b0891bf30.webp",
+  "title": {
+    "zh": "成功之日见",
+    "en": "The day of success will come"
+  },
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070260/moyan-web/93b9b953-ce0c-4403-8b88-dbd5b6823a67.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070237/moyan-web/e7ebf901-d408-499c-90ec-757508392d35.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070240/moyan-web/1a842feb-9db3-43a4-b8b5-bb7e30df8f9e.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070244/moyan-web/673228a3-d056-4c8a-a199-b97e53e4206c.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070249/moyan-web/716bf508-b1ed-434a-9513-ab220fa434e6.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070251/moyan-web/7073ef36-278d-4983-89ee-1067a37abf60.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070254/moyan-web/cf4a70bc-0e5e-4ab9-b691-3d49ea92c5f7.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070256/moyan-web/0cb00a5c-54c1-492f-8d43-644715004985.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1793070258/moyan-web/4d158c91-fb0d-43ea-bb5c-d3b4019ae7c4.webp"
+  ],
+  "id": "project-2650fcf8-ac53-416f-8aed-3b3bdb1334c7",
+  "year": "",
+  "roles": {
+    "zh": "剪辑｜配乐",
+    "en": "Editing | music"
+  },
+  "category": "film",
+  "subgroup": "none"
+}
