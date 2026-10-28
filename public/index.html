@@ -10,6 +10,7 @@
   <link rel="preload" href="assets/fonts/Outfit-Light.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/Signature-Han.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/Signature-Latin.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- hero-preload -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="films.css">
   <link rel="stylesheet" href="about.css">
@@ -21,7 +22,7 @@
   <a class="skip-link" href="#main" data-i18n="skip">跳至内容</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#home" aria-label="MOYAN 墨岩"><span class="brand-latin" lang="en">MOYAN</span><span class="brand-han" lang="zh-CN">墨岩</span></a>
+      <a class="brand" href="#home" aria-label="MOYAN 墨岩"><span class="brand-latin" lang="en">MOYAN</span><span class="brand-han" lang="zh-CN" data-site-text="name">墨岩</span></a>
       <nav class="main-nav" aria-label="主导航">
         <a href="#photography" data-i18n="stillImages">静态影像</a>
         <a href="#cinematography" data-i18n="filmCreation">短片创作</a>
@@ -67,12 +68,12 @@
     <p id="load-error" class="load-error" hidden role="alert"></p>
     <div id="home-view">
       <section class="hero image-panel" aria-labelledby="name">
-        <div class="panel-media hero-media"><img src="/assets/selected-photos/01-1800.webp" width="2536" height="1712" alt="墨岩的测试照片" data-site-image="hero" fetchpriority="high"></div>
+        <div class="panel-media hero-media"><img data-site-image="hero" fetchpriority="high" alt="墨岩的摄影作品"></div>
         <div class="panel-shade" aria-hidden="true"></div>
         <div class="hero-copy panel-copy">
-          <h1 id="name"><span class="signature-han" lang="zh-CN">墨岩</span><span class="signature-latin" lang="en">MOYAN</span></h1><p class="hero-identity">PHOTOGRAPHY &amp; CINEMATOGRAPHY</p>
+          <h1 id="name"><span class="signature-han" lang="zh-CN" data-site-text="name">墨岩</span><span class="signature-latin" lang="en">MOYAN</span></h1><p class="hero-identity">PHOTOGRAPHY &amp; CINEMATOGRAPHY</p>
           <p class="hero-role" data-i18n="independent">摄影 · 电影摄影</p>
-          <div class="hero-introduction" id="hero-introduction"></div>
+          <div class="hero-introduction" id="hero-introduction"><!-- hero-introduction --></div>
           <nav id="selected" class="jump-links cta-row" aria-label="作品快捷入口" tabindex="-1">
             <a class="cta" href="#photography" data-preview="photography" data-active="true" data-i18n="stillImages">静态影像</a>
             <a class="cta" href="#cinematography" data-preview="film" data-active="false" data-i18n="filmCreation">短片创作</a>
@@ -82,7 +83,7 @@
       </section>
       <section id="selected-visual" class="selected-section image-panel" aria-label="剧场影像 / Theatre photograph" tabindex="-1">
         <div class="selected-preview panel-media" data-current="photography">
-          <img class="is-active" data-site-image="selectedPreview" data-preview-image="photography" src="assets/selected-photos/01-1800.webp" srcset="assets/selected-photos/01-900.webp 900w, assets/selected-photos/01-1800.webp 1800w" sizes="100vw" width="1800" height="1800" alt="透过粉色窗帘的光线与室内台灯" data-alt="selectedCurtainAlt" loading="lazy">
+          <img class="is-active" data-site-image="selectedPreview" data-preview-image="photography" sizes="100vw" alt="墨岩的摄影作品" loading="lazy">
         </div>
         <div class="panel-shade" aria-hidden="true"></div>
       </section>
@@ -131,5 +132,6 @@
     <button type="button" class="viewer-arrow viewer-previous" data-viewer-previous aria-label="上一张 / Previous photograph">←</button>
     <button type="button" class="viewer-arrow viewer-next" data-viewer-next aria-label="下一张 / Next photograph">→</button>
   </dialog>
+  <!-- portfolio-bootstrap -->
 </body>
 </html>

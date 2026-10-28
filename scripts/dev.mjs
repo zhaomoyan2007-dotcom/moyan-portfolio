@@ -6,6 +6,7 @@ import { build,readContent,root } from './build.mjs';
 import { localMediaRoute } from '../lib/local-upload.mjs';
 import { ensurePortAvailable,waitForProxy } from '../lib/dev-proxy.mjs';
 import { cmsConfiguration } from '../lib/cms-config.mjs';
+import {renderDocument} from '../lib/page.mjs';
 const port=Number(process.env.DEV_PORT||4319);
 const output=join(root,'dist');
 await ensurePortAvailable(port);await ensurePortAvailable(8081);
@@ -22,6 +23,12 @@ const server=http.createServer(async(req,res)=>{
     if(await localMediaRoute(req,res,root,port))return;
     if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
     let pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
+    if(pathname==='/'||pathname==='/index.html'){
+      res.setHeader('Content-Type','text/html; charset=utf-8');
+      const data=await readContent();
+      const html=renderDocument(await readFile(join(root,'public/index.html'),'utf8'),{...data,build:{revision:'local'}});
+      res.end(req.method==='HEAD'?'':html);return;
+    }
     if(pathname==='/admin/runtime.json'||pathname==='/admin/config.json'){
       res.setHeader('Content-Type','application/json; charset=utf-8');
       res.end(JSON.stringify(pathname.endsWith('runtime.json')?{mode:'local',cloudinary:false}:cmsConfiguration(process.env,true).config));return;

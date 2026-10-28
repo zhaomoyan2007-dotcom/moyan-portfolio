@@ -4,6 +4,7 @@ import { resolve, join } from 'node:path';
 import { publicContent } from '../lib/content.mjs';
 import { cmsConfiguration } from '../lib/cms-config.mjs';
 import { prepareCMS } from '../lib/prepare-cms.mjs';
+import {renderDocument} from '../lib/page.mjs';
 export const root=fileURLToPath(new URL('../',import.meta.url));
 export function guardBuild(env){
   if(env.VERCEL&&String(env.VERCEL_GIT_COMMIT_REF||'').startsWith('cms/'))throw new Error('CMS草稿分支不生成公开预览；请在作品后台内预览。');
@@ -29,7 +30,9 @@ export async function build({local=false,env=process.env}={}) {
   await mkdir(output,{recursive:true});
   await cp(join(root,'public'),output,{recursive:true});
   await mkdir(join(output,'admin'),{recursive:true});
-  await writeFile(join(output,'content.json'),JSON.stringify({...data,build:{time:new Date().toISOString(),revision:env.VERCEL_GIT_COMMIT_SHA||'local'}},null,2));
+  const content={...data,build:{time:new Date().toISOString(),revision:env.VERCEL_GIT_COMMIT_SHA||'local'}};
+  await writeFile(join(output,'content.json'),JSON.stringify(content,null,2));
+  await writeFile(join(output,'index.html'),renderDocument(await readFile(join(root,'public/index.html'),'utf8'),content));
   await writeFile(join(output,'admin/config.json'),JSON.stringify(config,null,2));
   await writeFile(join(output,'admin/runtime.json'),JSON.stringify({mode:local?'local':configured?'github':'unconfigured',cloudinary:!!config.media_library}));
   return {projects:data.projects.length,photos:data.site.homePhotos.length,mode:local?'local':configured?'github':'unconfigured'};

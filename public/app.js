@@ -1,3 +1,4 @@
+import {loadPortfolio} from './bootstrap.mjs';
 import { aboutContent } from './about.mjs';
 import { archiveFilterGroups } from './archive-filters.mjs';
 import { copy } from './copy.js';
@@ -169,6 +170,5 @@ dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog
 dialog.addEventListener('close',()=>{activeProject=null;if(location.hash.startsWith('#project/'))location.hash=returnHash;if(projectTrigger?.isConnected)projectTrigger.focus({preventScroll:true});});
 window.addEventListener('hashchange',()=>{if(data)route();});
 try{
-  const response=await fetch('/content.json',{cache:'no-cache'});
-  if(!response.ok)throw new Error('Content unavailable');data=await response.json();setLanguage(language);route();
+  data=await loadPortfolio();setLanguage(language);route();
 }catch{const error=byId('load-error');error.hidden=false;error.textContent=t('loadError');}
