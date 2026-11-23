@@ -3,7 +3,7 @@ import { aboutContent } from './about.mjs';
 import { archiveFilterGroups } from './archive-filters.mjs';
 import { copy } from './copy.js';
 import { imageURL,galleryLayout,filmProjects,filmImages } from './media.mjs';
-import { createFilmProject,updateFilmLanguage } from './films.mjs';
+import { createFilmMedia,createFilmProject,updateFilmLanguage } from './films.mjs';
 import { createGallery,emptyGallery } from './galleries.mjs';
 import { createPhotoViewer } from './photo-viewer.mjs';
 
@@ -119,10 +119,12 @@ function renderProject(){
     const meta=[t(project.category),project.category==='film'?(project.projectDate||project.year):project.year,localized(project.roles)].filter(Boolean).join(' / ');
     body.append(node('p','dialog-subtitle',meta));
     if(localized(project.description))body.append(node('p','project-description',localized(project.description)));
-    const gallery=node('div','project-gallery');
-    const film=project.category==='film'?filmImages(project):null;
-    const frames=film?[film.cover,...film.stills]:project.images;
-    frames.forEach((src,i)=>gallery.append(photograph(src,i,i===0)));body.append(gallery);
+    if(project.category==='film'){
+      body.append(...createFilmMedia(filmImages(project),(src,index,lead)=>photograph(src,index,lead)));
+    }else{
+      const gallery=node('div','project-gallery');
+      project.images.forEach((src,i)=>gallery.append(photograph(src,i,i===0)));body.append(gallery);
+    }
     if(localized(project.concept)){const concept=node('div','project-concept');concept.append(node('h3','',t('concept')),node('p','',localized(project.concept)));body.append(concept);}
   }
   byId('dialog-content').replaceChildren(body);

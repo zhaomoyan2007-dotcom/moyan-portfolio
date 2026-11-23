@@ -37,8 +37,9 @@ test('CMS supports project date and independently editable cover, stills and bil
 import {createFilmProject,updateFilmLanguage} from '../public/films.mjs';
 test('film renderer keeps title, date, cover, stills and bilingual details in reading order',()=>{
  class Element{
-  constructor(tag){this.tag=tag;this.children=[];this.attributes={};this.textContent='';this.dataset={};this.naturalWidth=0;this.naturalHeight=0;}
+  constructor(tag){this.tag=tag;this.children=[];this.attributes={};this.textContent='';this.dataset={};this.style={};this.naturalWidth=0;this.naturalHeight=0;}
   append(...children){for(const child of children){child.parentNode=this;this.children.push(child);}}
+  replaceChildren(...children){this.children=[];this.append(...children);}
   remove(){if(this.parentNode)this.parentNode.children=this.parentNode.children.filter(child=>child!==this);}
   setAttribute(key,value){this.attributes[key]=value;}
   addEventListener(){}

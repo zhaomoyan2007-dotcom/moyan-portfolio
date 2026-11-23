@@ -33,14 +33,18 @@ async function start(){
     let aboutProjects=[];
     try{const response=await fetch('/content.json',{cache:'no-cache'});if(response.ok)aboutProjects=(await response.json()).projects||[];}catch{}
 
-    const {filmPreview}=await import('./film-preview.mjs');
+    const {filmPreview,filmStillsEditor}=await import('./film-preview.mjs');
+    const {projectImagesEditor}=await import('./project-images.mjs');
+    const imagesEditor=projectImagesEditor(window.createClass,window.h,window.CMS.getWidget('image'));
+    window.CMS.registerWidget(imagesEditor.widget);
+    const FilmStills=filmStillsEditor(window.createClass,window.h,imagesEditor.apply);
     const {sitePreview}=await import('./site-preview.mjs');
     const {photoPreview}=await import('./photo-preview.mjs');
     const {galleryLayout}=await import('../media.mjs');
     const Preview=window.createClass({render(){
       const data=this.props.entry.get('data').toJS();
       if(!data.category)return sitePreview(data,window.h,this.props.getAsset,aboutProjects);
-      if(data.category==='film')return filmPreview(data,window.h,this.props.getAsset);
+      if(data.category==='film')return filmPreview(data,window.h,this.props.getAsset,FilmStills);
       return photoPreview(data,window.h,this.props.getAsset,galleryLayout(data.category,data.subgroup));
     }});
     window.CMS.registerPreviewStyle('/about.css');

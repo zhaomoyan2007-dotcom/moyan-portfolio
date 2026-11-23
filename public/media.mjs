@@ -26,8 +26,17 @@ export function filmProjects(projects) {
   const time=p=>Number((p.projectDate||(/^[1-9]\d{3}$/.test(p.year||'')?p.year:'')).replaceAll('-','').padEnd(8,'0'));
   return projects.filter(p=>p.category==='film').slice().sort((a,b)=>time(b)-time(a)||a.order-b.order||a.id.localeCompare(b.id));
 }
+const projectImages = value => Array.isArray(value) ? value : typeof value === 'string' ? [value] : [];
 export function filmImages(project) {
-  const images=Array.isArray(project.images)?project.images:typeof project.images==='string'?[project.images]:[];
+  const images=projectImages(project.images);
   const cover=(Array.isArray(project.cover)?project.cover[0]:project.cover)||images[0]||'';
   return {cover,stills:images.filter(src=>src!==cover)};
+}
+
+export function reorderFilmStills(project, order) {
+  const { cover, stills } = filmImages(project);
+  if (order.length !== stills.length || new Set(order).size !== order.length ||
+      order.some(index => !Number.isInteger(index) || index < 0 || index >= stills.length)) return null;
+  let index = 0;
+  return projectImages(project.images).map(src => src === cover ? src : stills[order[index++]]);
 }

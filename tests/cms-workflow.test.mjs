@@ -30,12 +30,14 @@ test('browser media entry does not expose server content validation',async()=>{
 const h=(tag,props,...children)=>({tag,props,children:children.flat()});
 const walk=node=>node&&typeof node==='object'?[node,...node.children.flatMap(walk)]:[];
 test('film preview uses the public film structure, preserves all stills and omits removed labels',async()=>{
- const {filmPreview}=await import('../public/admin/film-preview.mjs');
- const tree=filmPreview({title:{zh:'中文',en:'English'},cover:'/assets/cover.webp',images:Array.from({length:14},(_,i)=>`/assets/${i}.webp`),roles:{zh:'摄影',en:'DP'},concept:{zh:'阐述正文',en:'Statement'}},h,x=>x);
+ const {filmPreview,filmStillsEditor}=await import('../public/admin/film-preview.mjs');
+ const FilmStills=filmStillsEditor(spec=>spec,h,()=>false);
+ const tree=filmPreview({title:{zh:'中文',en:'English'},cover:'/assets/cover.webp',images:Array.from({length:14},(_,i)=>`/assets/${i}.webp`),roles:{zh:'摄影',en:'DP'},concept:{zh:'阐述正文',en:'Statement'}},h,x=>x,FilmStills);
  const nodes=walk(tree);
  assert.equal(nodes.filter(n=>n.props?.className==='film-project').length,2);
- const grids=nodes.filter(n=>n.props?.className==='film-stills');
- assert.equal(grids.length,2);assert.ok(grids.every(n=>n.children.length===14));
+ const grids=nodes.filter(n=>n.tag===FilmStills).map(({props})=>FilmStills.render.call({props,state:FilmStills.getInitialState()}));
+ assert.equal(grids.length,2);
+ assert.ok(grids.every(grid=>walk(grid).filter(n=>n.tag==='img').length===14));
  assert.equal(nodes.filter(n=>n.props?.className==='film-details').length,2);
  assert.ok(!nodes.some(n=>n.tag==='h2'));
 });
