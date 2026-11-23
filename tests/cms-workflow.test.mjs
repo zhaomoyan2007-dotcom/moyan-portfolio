@@ -78,3 +78,45 @@ test('category control exposes only UI context and forwards normal select editin
  }
  assert.equal(projects.fields.find(f=>f.name==='category').widget,'project-category');
 });
+
+test('project images process media selection before the field value changes',async()=>{
+ const {projectImagesEditor}=await import('../public/admin/project-images.mjs');
+ const files=['/uploads/portrait.webp','/uploads/landscape.webp'];
+ const changes=[];
+ const mediaPaths=new Map();
+ const props={value:[],mediaPaths,onChange:value=>changes.push(value),onRemoveInsertedMedia:id=>mediaPaths.delete(id)};
+ let mounted=false;
+ class ImageControl {
+   constructor(props){this.props=props;this.controlID='image';}
+   componentDidMount(){mounted=true;}
+   componentWillUnmount(){mounted=false;}
+   shouldComponentUpdate(next){return next.value!==this.props.value||next.mediaPaths.has(this.controlID);}
+   componentDidUpdate(){
+     const {value,mediaPaths,onChange,onRemoveInsertedMedia}=this.props;
+     const selected=mediaPaths.get(this.controlID);
+     if(selected&&selected!==value)onChange(selected);
+     else if(selected)onRemoveInsertedMedia(this.controlID);
+   }
+ }
+ const editor=projectImagesEditor({control:ImageControl});
+ const Control=editor.widget.controlComponent;
+ assert.equal(typeof Control.prototype?.shouldComponentUpdate,'function');
+ const control=new Control(props);
+ control.componentDidMount();
+ assert.equal(mounted,true);
+ mediaPaths.set('image',files);
+ const next={...props};
+ assert.equal(control.shouldComponentUpdate(next),true);
+ control.props=next;
+ control.componentDidUpdate();
+ assert.deepEqual(changes,[files]);
+ control.props={...next,value:files};
+ const project={cover:'/uploads/cover.webp',images:files};
+ assert.equal(editor.apply(project,[1,0]),true);
+ control.props={...next,value:changes.at(-1)};
+ control.componentDidUpdate();
+ assert.deepEqual(changes.at(-1),[files[1],files[0]]);
+ control.componentWillUnmount();
+ assert.equal(mounted,false);
+ assert.equal(editor.apply(project,[1,0]),false);
+});

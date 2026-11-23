@@ -1,14 +1,25 @@
 import { reorderFilmStills } from '../media.mjs';
 
-export function projectImagesEditor(createClass, h, {control, preview, ...options}) {
+export function projectImagesEditor({control, preview, ...options}) {
   let activeControl;
-  const Control = createClass({
-    componentDidMount() { activeControl = this; },
+  // Decap consults the registered control's update hook for media library selections.
+  class Control extends control {
+    componentDidMount() {
+      super.componentDidMount();
+      activeControl = this;
+    }
+    componentDidUpdate() {
+      const { mediaPaths, value, onRemoveInsertedMedia } = this.props;
+      const inserted = mediaPaths.get(this.controlID);
+      super.componentDidUpdate();
+      // A saved list may be a different reference, so acknowledge insertion after applying it.
+      if (inserted && inserted !== value) onRemoveInsertedMedia(this.controlID);
+    }
     componentWillUnmount() {
       if (activeControl === this) activeControl = undefined;
-    },
-    render() { return h(control, this.props); }
-  });
+      super.componentWillUnmount();
+    }
+  }
 
   return {
     widget: { ...options, name: 'project-images', controlComponent: Control, previewComponent: preview },

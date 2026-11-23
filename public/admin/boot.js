@@ -35,7 +35,7 @@ async function start(){
 
     const {filmPreview,filmStillsEditor}=await import('./film-preview.mjs');
     const {projectImagesEditor}=await import('./project-images.mjs');
-    const imagesEditor=projectImagesEditor(window.createClass,window.h,window.CMS.getWidget('image'));
+    const imagesEditor=projectImagesEditor(window.CMS.getWidget('image'));
     window.CMS.registerWidget(imagesEditor.widget);
     const FilmStills=filmStillsEditor(window.createClass,window.h,imagesEditor.apply);
     const {sitePreview}=await import('./site-preview.mjs');
