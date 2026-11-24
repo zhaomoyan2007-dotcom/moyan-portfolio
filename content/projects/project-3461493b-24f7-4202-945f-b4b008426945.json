@@ -1,5 +1,9 @@
 {
   "projectDate": "2026-11-21",
+  "concept": {
+    "zh": "在中传与北电学生联合拍摄的短片中担任摄影助理以及外景布光设计。熟练掌握索尼 FX5的组装及使用，在器材公司电影设备大量故障的情况下保障了剧组的电源供给；室外为减弱太阳光对布光的干扰，用12×12蝴蝶布柔化阳光，用南光2400x升高再 tilt down45度角贴近窗帘向下打光，营造出富有氛围感的光线效果。 ",
+    "en": "I worked as a camera assistant and designed the exterior lighting for a short film made jointly by students from the Communication University of China and Beijing Film Academy. I became proficient in rigging and operating the Sony FX5 and kept the set powered when much of the rental equipment failed.\n\nOn location, I softened direct sunlight with a 12 × 12 butterfly diffusion frame to give us more control over the lighting. I then raised a 2400X just outside the curtained window and aimed it downward at 45° to create an atmospheric look."
+  },
   "featured": false,
   "order": 0,
   "status": "draft",
@@ -8,8 +12,24 @@
     "zh": "朝开暮落",
     "en": "Bloom at Dawn, Fade at Dusk"
   },
-  "images": [],
+  "images": [
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482842/moyan-web/500ebc29-1ee1-4df8-afd7-985096b5ce2f.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482848/moyan-web/6a42faf7-5a8f-4f0b-a46e-4140d1f14db1.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482845/moyan-web/d59a5f66-89b1-4b3a-94f3-f5ea08345f5d.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482846/moyan-web/d2358eac-dc56-47d7-a1d8-960bcf952795.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482844/moyan-web/60421cfb-4620-4840-bf4b-44eac8523810.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482849/moyan-web/232dffa8-8c04-4b3d-99d4-966eb237b271.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482851/moyan-web/f86a346d-151a-49ef-909b-62a8411685b7.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482853/moyan-web/5bba533b-002c-49f7-9614-d1210fb1dddb.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482855/moyan-web/aa337838-af76-4edd-87e0-c56303ce2622.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482857/moyan-web/58eda8ed-688b-4ed8-85d3-99c1e7a8e5ac.webp",
+    "https://res.cloudinary.com/zbbwj4ou/image/upload/v1795482859/moyan-web/f2167d7b-7074-48e7-bfef-4d75e9bdde5f.webp"
+  ],
   "id": "project-3461493b-24f7-4202-945f-b4b008426945",
+  "roles": {
+    "zh": "摄影助理AC/外景灯光设计",
+    "en": "Assistant Camera/Exterior Lighting design"
+  },
   "category": "film",
   "subgroup": "none"
 }
